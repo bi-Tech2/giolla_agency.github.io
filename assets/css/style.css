@@ -331,33 +331,33 @@ body {
 /* Responsive styling for tablets */
 @media (max-width: 768px) {
   .logo img {
-    max-width: 50px; /* Adjust logo size for tablets */
+    max-width: 65px; /* Adjust logo size for tablets */
   }
 
   .logo b {
-    font-size: 2.2rem; /* Adjust text size for tablets */
+    font-size: 2.6rem; /* Adjust text size for tablets */
   }
 }
 
 /* Responsive styling for mobile */
 @media (max-width: 480px) {
   .logo img {
-    max-width: 40px; /* Adjust logo size for mobile */
+    max-width: 50px; /* Adjust logo size for mobile */
   }
 
   .logo b {
-    font-size: 1.8rem; /* Adjust text size for mobile */
+    font-size: 2rem; /* Adjust text size for mobile */
   }
 }
 
 /* Small mobile screens (extra small) */
 @media (max-width: 360px) {
   .logo img {
-    max-width: 35px; /* Further reduction for small mobile screens */
+    max-width: 50px; /* Further reduction for small mobile screens */
   }
 
   .logo b {
-    font-size: 1.6rem; /* Further reduction for small mobile screens */
+    font-size: 1.9rem; /* Further reduction for small mobile screens */
   }
 }
 
