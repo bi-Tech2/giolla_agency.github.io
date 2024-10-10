@@ -1207,3 +1207,150 @@ body {
   .faq-card .card-action.active + .card-content { max-height: 200px; }
 
 }
+
+
+
+
+.contact-section {
+  padding: 50px 20px; /* Spacing around the section */
+  transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+
+.contact-intro {
+  text-align: center; /* Center the introductory text */
+  margin-bottom: 30px; /* Spacing below the intro */
+  opacity: 0; /* Start hidden */
+  animation: fadeIn 1s forwards; /* Fade in effect */
+  animation-delay: 0.2s; /* Delay for intro */
+}
+
+.contact-title {
+  font-size: 3.5rem; /* Larger title size */
+  color: #0e1621; /* White text color */
+  margin-bottom: 10px; /* Space below title */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Text shadow */
+}
+
+.contact-description {
+  font-size: 1.2rem; /* Larger description size */
+  color: #e0e0e0; /* Light gray for description */
+  max-width: 600px; /* Limit width of description */
+  margin: 0 auto; /* Center align */
+}
+
+.contact-form {
+  max-width: 900px; /* Limit form width */
+  margin: 0 auto; /* Center align */
+  background: var(--go-green_5);
+  padding: 30px; /* Increased padding inside the form */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow for form */
+  animation: slideIn 0.5s forwards; /* Slide in effect */
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.form-group-container {
+  display: flex; /* Flexbox for form groups */
+  flex-direction: column; /* Stack vertically */
+}
+
+.form-group {
+  position: relative; /* Relative positioning for icons */
+  margin-bottom: 20px; /* Space between form fields */
+}
+
+.form-label {
+  font-weight: bold; /* Bold labels */
+  margin-bottom: 5px; /* Space below labels */
+  color: #5e5d5d; /* Dark color for labels */
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  min-height: 50px;
+  margin-top: 10px;
+  background: #ffffff;
+  padding: 6px 15px; /* Increased padding inside inputs */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 1.5rem; /* Font size for inputs */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for border color and shadow */
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: #007bff; /* Change border color on focus */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add shadow on focus */
+}
+
+.form-textarea {
+  resize: vertical; /* Allow vertical resizing only */
+  min-height: 120px; /* Minimum height for textarea */
+}
+
+.form-submit {
+  background-color: #007bff; /* Primary color for button */
+  color: #fff; /* White text color */
+  border: none; /* Remove border */
+  padding: 12px 20px; /* Padding around button */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 1.6rem; 
+  min-width: 35rem;
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth background color change */
+}
+
+.form-submit:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Icons for input fields */
+.form-group:before {
+  content: '';
+  position: absolute;
+  left: 12px; /* Position icon */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust vertical position */
+  font-family: 'Font Awesome 5 Free'; /* Use Font Awesome for icons */
+  font-weight: 900; /* Bold icons */
+  color: #007bff; /* Icon color */
+}
+
+#name:before {
+  content: '\f007'; /* User icon */
+}
+
+#email:before {
+  content: '\f0e0'; /* Envelope icon */
+}
+
+#phone:before {
+  content: '\f095'; /* Phone icon */
+}
+
+#message:before {
+  content: '\f0c9'; /* Comment icon */
+}
