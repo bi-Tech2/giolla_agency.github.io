@@ -23,11 +23,11 @@
    --rich-black-fogra-29-2: hsl(230, 14%, 8%);
    --rich-black-fogra-39: hsl(223, 28%, 5%);
    --granite-gray: hsl(0, 0%, 40%);
-   --go-green_50: hsla(210, 63%, 42%, 0.5); /* Changed to cool blue */
-   --go-green_8: hsla(210, 63%, 42%, 0.08); /* Changed to cool blue */
-   --go-green_5: hsla(210, 63%, 42%, 0.05); /* Changed to cool blue */
+   --go-green_50: hsla(210, 63%, 42%, 0.5);
+   --go-green_8: hsla(210, 63%, 42%, 0.08);
+   --go-green_5: hsla(210, 63%, 42%, 0.05);
    --light-gray: hsl(0, 0%, 80%);
-   --mint-cream: hsl(190, 100%, 98%); /* Adjusted to light blue */
+   --mint-cream: hsl(190, 100%, 98%);
    --cultured: hsl(0, 0%, 93%);
    --go-green: hsl(210, 63%, 42%);
    --white: hsl(0, 0%, 100%);
@@ -1212,6 +1212,8 @@ body {
 
 
 .contact-section {
+  margin-bottom: .9px;
+  background-color: var(--rich-black-fogra-29-2);
   padding: 50px 20px; /* Spacing around the section */
   transition: background-color 0.3s; /* Smooth background color transition */
 }
@@ -1227,7 +1229,7 @@ body {
 
 .contact-title {
   font-size: 3.5rem; /* Larger title size */
-  color: #0e1621; /* White text color */
+  color: #d7dee9; /* White text color */
   margin-bottom: 10px; /* Space below title */
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Text shadow */
 }
@@ -1276,13 +1278,13 @@ body {
 
 .form-group {
   position: relative; /* Relative positioning for icons */
-  margin-bottom: 20px; /* Space between form fields */
+  margin-bottom: 30px; /* Space between form fields */
 }
 
 .form-label {
   font-weight: bold; /* Bold labels */
-  margin-bottom: 5px; /* Space below labels */
-  color: #5e5d5d; /* Dark color for labels */
+  margin-bottom: 15px; /* Space below labels */
+  color: #a5a5a5; /* Dark color for labels */
 }
 
 .form-input,
@@ -1290,7 +1292,8 @@ body {
   width: 100%;
   min-height: 50px;
   margin-top: 10px;
-  background: #ffffff;
+  background: var(--action-bg);
+  color: #e0e0e0;
   padding: 6px 15px; /* Increased padding inside inputs */
   border: 1px solid #ccc; /* Light border */
   border-radius: 4px; /* Rounded corners */
