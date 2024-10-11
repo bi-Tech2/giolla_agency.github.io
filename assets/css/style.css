@@ -757,7 +757,7 @@ body {
 .footer {
   background-color: var(--rich-black-fogra-29-2);
   color: var(--cultured);
-  padding-left: 13px;
+  padding-left: 10px;
 }
 
 .footer-top .container {
@@ -1213,7 +1213,6 @@ body {
 
 
 .contact-section {
-  margin-bottom: .9px;
   background-color: var(--rich-black-fogra-29-2);
   padding: 50px 10px; /* Spacing around the section */
   transition: background-color 0.3s; /* Smooth background color transition */
@@ -1357,4 +1356,92 @@ body {
 
 #message:before {
   content: '\f0c9'; /* Comment icon */
+}
+:root {
+  --cta-bg-color: hsl(215, 31%, 14%);
+  --cta-title-color: hsl(0, 0%, 100%);
+  --cta-text-color: hsl(0, 0%, 80%);
+  --cta-btn-bg: hsl(210, 63%, 42%);
+  --cta-btn-hover-bg: hsl(210, 63%, 35%);
+  --cta-btn-color: hsl(0, 0%, 100%);
+}
+
+.section.cta {
+  background-color: var(--cta-bg-color);
+  padding: 60px 10px; /* Spacing around the CTA section */
+}
+
+.cta-content {
+  max-width: 800px;
+  margin: 0 auto; /* Center the content within the section */
+}
+
+.cta-title {
+  font-size: 3rem; /* Large title */
+  color: var(--cta-title-color); /* Title color */
+  margin-bottom: 20px; /* Space below the title */
+}
+
+.cta-text {
+  font-size: 1.2rem; /* Text size */
+  color: var(--cta-text-color); /* Lighter gray for description */
+  margin-bottom: 30px; /* Space below the text */
+  line-height: 1.6; /* Improve readability */
+}
+
+.btn-primary {
+  display: inline-block; /* Allows padding to work */
+  background-color: var(--cta-btn-bg); /* Button background */
+  color: var(--cta-btn-color); /* Button text color */
+  padding: 15px 30px; /* Padding inside the button */
+  font-size: 1.4rem; /* Button text size */
+  border-radius: 6px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transitions */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Slight shadow for a raised button effect */
+}
+
+.btn-primary:hover {
+  background-color: var(--cta-btn-hover-bg); /* Darker background on hover */
+  transform: translateY(-3px); /* Button lift effect on hover */
+}
+
+
+.testimonial-container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+.testimonial-slider {
+  display: flex;
+  align-items: center;
+}
+
+.testimonial-item {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 0 10px;
+}
+
+.testimonial-item img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.testimonial-item h3 {
+  font-size: 1.7rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.testimonial-item p {
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 1.5;
 }
