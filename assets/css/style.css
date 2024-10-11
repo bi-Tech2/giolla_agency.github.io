@@ -148,7 +148,7 @@ body {
 
 :focus-visible { outline-offset: 4px; }
 
-::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar { width: .10px; }
 
 ::-webkit-scrollbar-track { background-color: hsl(0, 0%, 98%); }
 
@@ -757,6 +757,7 @@ body {
 .footer {
   background-color: var(--rich-black-fogra-29-2);
   color: var(--cultured);
+  padding-left: 13px;
 }
 
 .footer-top .container {
@@ -1214,7 +1215,7 @@ body {
 .contact-section {
   margin-bottom: .9px;
   background-color: var(--rich-black-fogra-29-2);
-  padding: 50px 20px; /* Spacing around the section */
+  padding: 50px 10px; /* Spacing around the section */
   transition: background-color 0.3s; /* Smooth background color transition */
 }
 
