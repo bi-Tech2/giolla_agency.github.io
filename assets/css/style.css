@@ -1410,6 +1410,7 @@ body {
 .testimonial-container {
   width: 90%;
   margin: 0 auto;
+  margin-bottom: 30px;
   padding: 50px 0;
 }
 
