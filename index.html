@@ -41,6 +41,105 @@
 
 <body>
 
+  <!-- #HEADER -->
+<span class="loader"></span>
+
+<style>
+  .loader {
+    transform: rotateZ(45deg);
+    perspective: 1000px;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .loader:before,
+  .loader:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    transform: rotateX(70deg);
+    animation: 1s spin linear infinite;
+  }
+
+  .loader:after {
+    color: #FF3D00;
+    transform: rotateY(70deg);
+    animation-delay: .4s;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: translate(-50%, -50%) rotateZ(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotateZ(360deg);
+    }
+  }
+
+  @keyframes rotateccw {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(-360deg);
+    }
+  }
+
+  @keyframes spin {
+    0%,
+    100% {
+      box-shadow: .2em 0px 0 0px currentcolor;
+    }
+    12% {
+      box-shadow: .2em .2em 0 0 currentcolor;
+    }
+    25% {
+      box-shadow: 0 .2em 0 0px currentcolor;
+    }
+    37% {
+      box-shadow: -.2em .2em 0 0 currentcolor;
+    }
+    50% {
+      box-shadow: -.2em 0 0 0 currentcolor;
+    }
+    62% {
+      box-shadow: -.2em -.2em 0 0 currentcolor;
+    }
+    75% {
+      box-shadow: 0px -.2em 0 0 currentcolor;
+    }
+    87% {
+      box-shadow: .2em -.2em 0 0 currentcolor;
+    }
+  }
+
+  /* Hide loader after fade-out */
+  .hidden {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    visibility: hidden;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+      document.querySelector('.loader').classList.add('hidden');
+    }, 5000); // 5 seconds
+  });
+</script>
+
   <!-- 
     - #HEADER
   -->
@@ -79,7 +178,7 @@
         <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
       </button>
 
-      <a href="#" class="btn-outline">Let's Talk</a>
+      <a href="register.html" class="btn-outline">Let's Talk</a>
 
       <div class="overlay" data-nav-toggler data-overlay></div>
 
@@ -111,7 +210,7 @@
             <div class="btn-group">
               <a href="#services" class="btn btn-primary">Explore Our Services</a>
 
-              <button class="flex-btn">
+              <button class="flex-btn" onclick="">
                 <div class="btn-icon">
                   <ion-icon name="play" aria-hidden="true"></ion-icon>
                 </div>
@@ -410,7 +509,7 @@
 
           </ul>
 
-          <a href="#" class="btn btn-primary text-center">Get Started</a>
+          <a href="register.html" class="btn btn-primary text-center">Get Started</a>
 
         </div>
       </section>
@@ -802,7 +901,7 @@
     <div class="cta-content">
       <h2 class="h2 cta-title">Ready to Take Your Business to the Next Level?</h2>
       <p class="cta-text">Get started with our expert services today and watch your business thrive!</p>
-      <a href="#" class="btn btn-primary">Get Started</a>
+      <a href="register.html" class="btn btn-primary">Get Started</a>
     </div>
   </div>
 </section>
