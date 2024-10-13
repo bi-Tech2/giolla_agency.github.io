@@ -35,10 +35,12 @@ onAuthStateChanged(auth, (user) => {
           if (docSnap.exists()) {
             const userData = docSnap.data();
 
-            // Populate the HTML with user data
-            document.getElementById("loggedUserFirstname").innerText = userData.firstname;
-            document.getElementById("loggedUserLastname").innerText = userData.lastname;
-            document.getElementById("loggedUserEmail").innerText = userData.email;
+            // Display only initials (First letter of first name + first letter of last name)
+            const firstInitial = userData.firstname.charAt(0).toUpperCase();
+            const lastInitial = userData.lastname.charAt(0).toUpperCase();
+            const initials = `${firstInitial}${lastInitial}`;
+
+            document.getElementById("loggedUserFirstname").innerText = initials;
           }
         })
         .catch((error) => {
@@ -46,9 +48,20 @@ onAuthStateChanged(auth, (user) => {
         });
     }
   } else {
-    // If no user is signed in, redirect to the login page
-    window.location.href = "login.html";
+    // If no user is signed in, redirect to the register page
+    window.location.href = "register.html";
   }
+});
+
+// Add click event listener to the ion-icon to toggle Sign Out button
+document.getElementById("userIcon").addEventListener("click", () => {
+  console.log("User icon clicked!"); // Debugging
+  const signOutBtn = document.getElementById("signOutBtn");
+  console.log("Current button display:", signOutBtn.style.display); // Debugging
+
+  // Toggle display between "block" and "none"
+  signOutBtn.style.display = signOutBtn.style.display === "none" || !signOutBtn.style.display ? "block" : "none";
+  console.log("New button display:", signOutBtn.style.display); // Debugging
 });
 
 // Sign-out logic
@@ -57,11 +70,22 @@ document.getElementById("signOutBtn").addEventListener("click", (event) => {
 
   signOut(auth)
     .then(() => {
-      // Clear local storage and redirect to login
+      console.log("User signed out successfully!"); // Debugging
+
+      // Clear local storage and redirect to register
       localStorage.removeItem("loggedInUserId");
-      window.location.href = "login.html";
+      window.location.href = "register.html";
     })
     .catch((error) => {
       console.error("Sign out error: ", error);
     });
 });
+
+
+
+
+
+
+// send("service_4c9xitj", "template_gdpqzab", {
+// //   to_email: "giolla.world.wide@gmail.com",
+// emailjs.init("cGFGCFOuNXLaOaIXB"); // Replace with your EmailJS user ID

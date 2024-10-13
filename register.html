@@ -7,538 +7,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GIOLLA AGENCY - Smart Ideas for your Brand are Here</title>
 </head>
-
+<link rel="stylesheet" href="register.css">
+<link rel="shortcut icon" href="assets/images/giolla-fav.png" type="image/x-icon">
 <body>
-
-
   <!-- 
     - #HEADER
   -->
-
-
-  
-  
-          <style>
-            @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
-
-            *,
-*::before,
-*::after {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body,
-input {
-  font-family: "Poppins", sans-serif;
-}
-
-main {
-  width: 100%;
-  min-height: 100vh;
-  overflow: hidden;
-  background-color: hsl(215, 31%, 14%);
-  padding: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.box {
-  position: relative;
-  width: 100%;
-  max-width: 1020px;
-  height: 640px;
-  background-color: hsl(0, 0%, 93%);
-  border-radius: 3.3rem;
-  box-shadow: 0 60px 40px -30px rgba(0, 0, 0, 0.27);
-}
-
-.inner-box {
-  position: absolute;
-  width: calc(100% - 4.1rem);
-  height: calc(100% - 4.1rem);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.forms-wrap {
-  position: absolute;
-  height: 100%;
-  width: 45%;
-  top: 0;
-  left: 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  transition: 0.8s ease-in-out;
-}
-
-form {
-  max-width: 360px;
-  width: 100%;
-  margin: 0 auto;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  transition: opacity 0.02s 0.4s;
-}
-
-form.sign-up-form {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-}
-
-.logo img {
-  width: 40px;
-  margin-right: 0.3rem;
-}
-
-.logo h4 {
-  font-size: 1.5rem;
-  margin-top: 9px;
-  letter-spacing: -0.5px;
-  color: #151111;
-}
-
-.heading h2 {
-  font-size: 2.15rem;
-  font-weight: 600;
-  color: #151111;
-}
-
-.heading a{
-  font-size: 0.9rem;
-}
-
-.heading h6 {
-  color: #323232;
-  font-weight: 400;
-  font-size: 0.8rem;
-  display: inline;
-}
-::-webkit-scrollbar { width: .10px; }
-
-::-webkit-scrollbar-track { background-color: hsl(0, 0%, 98%); }
-
-::-webkit-scrollbar-thumb { background-color: hsl(0, 0%, 80%); }
-
-::-webkit-scrollbar-thumb:hover { background-color: hsl(0, 0%, 70%); }
-
-.toggle {
-  color: hsl(215, 54%, 26%);
-  text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 700;
-  transition: 0.3s;
-}
-
-.toggle:hover {
-  color: #8371fd;
-}
-
-.input-wrap {
-  position: relative;
-  height: 37px;
-  margin-bottom: 2rem;
-}
-
-.input-field {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: none;
-  border: none;
-  outline: none;
-  border-bottom: 1px solid #bbb;
-  padding: 0;
-  font-size: 0.95rem;
-  color: #151111;
-  transition: 0.4s;
-}
-
-label {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 0.95rem;
-  color: #bbb;
-  pointer-events: none;
-  transition: 0.4s;
-}
-
-.input-field.active {
-  border-bottom-color: #151111;
-}
-
-.input-field.active + label {
-  font-size: 0.75rem;
-  top: -2px;
-}
-
-.sign-btn {
-  display: inline-block;
-  width: 100%;
-  height: 43px;
-  background-color: #151111;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  border-radius: 0.8rem;
-  font-size: 0.8rem;
-  margin-bottom: 2rem;
-  transition: 0.3s;
-}
-
-.sign-btn:hover {
-  background-color: #8371fd;
-}
-
-.text {
-  color: #bbb;
-  font-size: 0.7rem;
-}
-
-.text a {
-  color: #bbb;
-  transition: 0.3s;
-}
-
-.text a:hover {
-  color: #8371fd;
-}
-
-main.sign-up-mode form.sign-in-form {
-  opacity: 0;
-  pointer-events: none;
-}
-
-main.sign-up-mode form.sign-up-form {
-  opacity: 1;
-  pointer-events: all;
-}
-
-main.sign-up-mode .forms-wrap {
-  left: 55%;
-}
-
-main.sign-up-mode .carousel {
-  left: 0%;
-}
-
-.carousel {
-  position: absolute;
-  height: 100%;
-  width: 55%;
-  left: 45%;
-  top: 0;
-  background-color: hsl(215, 31%, 14%);
-  border-radius: 2rem;
-  display: grid;
-  grid-template-rows: auto 1fr;
-  padding-bottom: 2rem;
-  overflow: hidden;
-  transition: 0.8s ease-in-out;
-}
-
-.images-wrapper {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-}
-
-.images-wrapper img{
-  max-height: 400px;
-}
-
-.image {
-  width: 100%;
-  grid-column: 1/2;
-  grid-row: 1/2;
-  opacity: 0;
-  transition: opacity 0.3s, transform 0.5s;
-}
-
-.img-1 {
-  transform: translate(0, -50px);
-}
-
-.img-2 {
-  transform: scale(0.4, 0.5);
-}
-
-.img-3 {
-  transform: scale(0.3) rotate(-20deg);
-}
-
-.image.show {
-  opacity: 1;
-  transform: none;
-}
-
-.text-slider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.text-wrap {
-  max-height: 2.2rem;
-  overflow: hidden;
-  margin-bottom: 2.5rem;
-}
-
-.text-group {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  transform: translateY(0);
-  transition: 0.5s;
-}
-
-.text-group h2 {
-  line-height: 2.2rem;
-  font-weight: 600;
-  color: #ededed;
-  font-size: 1.6rem;
-}
-
-.bullets {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.bullets span {
-  display: block;
-  width: 0.5rem;
-  height: 0.5rem;
-  background-color: #aaa;
-  margin: 0 0.25rem;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.bullets span.active {
-  width: 1.1rem;
-  background-color: #151111;
-  border-radius: 1rem;
-}
-
-@media (max-width: 850px) {
-  .box {
-    height: auto;
-    max-width: 550px;
-    overflow: hidden;
-  }
-
-  .inner-box {
-    position: static;
-    transform: none;
-    width: revert;
-    height: revert;
-    padding: 2rem;
-  }
-
-  .forms-wrap {
-    position: revert;
-    width: 100%;
-    height: auto;
-  }
-
-  form {
-    max-width: revert;
-    padding: 1.5rem 2.5rem 2rem;
-    transition: transform 0.8s ease-in-out, opacity 0.45s linear;
-  }
-
-  .heading {
-    margin: 2rem 0;
-  }
-
-  form.sign-up-form {
-    transform: translateX(100%);
-  }
-
-  main.sign-up-mode form.sign-in-form {
-    transform: translateX(-100%);
-  }
-
-  main.sign-up-mode form.sign-up-form {
-    transform: translateX(0%);
-  }
-
-  .carousel {
-    position: revert;
-    height: auto;
-    width: 100%;
-    padding: 3rem 2rem;
-    display: flex;
-  }
-
-  .images-wrapper {
-    display: none;
-  }
-
-  .text-slider {
-    width: 100%;
-  }
-}
-
-@media (max-width: 530px) {
-  main {
-    padding: 1rem;
-  }
-
-  .box {
-    border-radius: 2rem;
-  }
-
-  .inner-box {
-    padding: 1rem;
-  }
-
-  .carousel {
-    padding: 1.5rem 1rem;
-    border-radius: 1.6rem;
-  }
-
-  .text-wrap {
-    margin-bottom: 1rem;
-  }
-
-  .text-group h2 {
-    font-size: 1.2rem;
-  }
-
-  form {
-    padding: 1rem 2rem 1.5rem;
-  }
-}
-
-          </style>
 <main>
   <div class="box">
     <div class="inner-box">
       <div class="forms-wrap">
         <!-- Sign-in Form -->
-        <form id="signInForm"  class="sign-in-form">
+        <form id="signInForm" class="sign-in-form">
           <div class="logo">
             <img src="assets/images/giolla-fav.png" alt="Giolla Agency" />
             <h4>Giolla Agency</h4>
           </div>
-
+        
           <div class="heading">
             <h2>Welcome Back</h2>
             <h6>Not registered yet?</h6>
             <a href="#" class="toggle">Sign up</a>
           </div>
-
+        
           <div class="actual-form">
             <div class="input-wrap">
-              <input
-                type="email"
-                id="emailI"
-                class="input-field"
-                placeholder="Email address"
-                required
-              />
+              <input type="email" id="emailI" class="input-field" placeholder="Email address" required />
             </div>
-
+        
             <div class="input-wrap">
-              <input
-                type="password"
-                id="passwordI"
-                class="input-field"
-                required
-                placeholder="Password"
-              />
+              <input type="password" id="passwordI" class="input-field" required placeholder="Password" />
             </div>
-
+        
             <input type="submit" value="Sign In" class="sign-btn" />
             <p id="signInMessage" class="text"></p>
-
+        
             <p class="text">
               Forgotten your password or your login details?
               <a href="#">Get help</a> signing in
             </p>
           </div>
         </form>
-
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+        </script>
+        
+        
         <!-- Sign-up Form -->
-        <form id="signUpForm"  class="sign-up-form">
+        <form id="signUpForm" class="sign-up-form">
           <div class="logo">
             <img src="assets/images/giolla-fav.png" alt="Giolla Agency" />
             <h4>Giolla Agency</h4>
           </div>
-
+        
           <div class="heading">
             <h2>Get Started</h2>
             <h6>Already have an account?</h6>
             <a href="#" class="toggle">Sign in</a>
           </div>
-
+        
           <div class="actual-form">
             <div class="input-wrap">
-              <input
-                type="text"
-                id="firstname"
-                class="input-field"
-                
-                required
-              />
-              <label>First Name</label>
+              <input type="text" id="firstname" name="firstname" class="input-field" required placeholder="First name" />
             </div>
-
+        
             <div class="input-wrap">
-              <input
-                type="text"
-                id="lastname"
-                class="input-field"
-                
-                required
-              />
-              <label>Last Name</label>
+              <input type="text" id="lastname" name="lastname" class="input-field" required placeholder="Last name" />
             </div>
-
+        
             <div class="input-wrap">
-              <input
-                type="email"
-                id="email"
-                class="input-field"
-                
-                required
-              />
-              <label>Email</label>
+              <input type="email" id="email" name="email" class="input-field" required placeholder="Email address" />
             </div>
-
+        
             <div class="input-wrap">
-              <input
-                type="password"
-                id="password"
-                class="input-field"
-                
-                required
-              />
-              <label>Password</label>
+              <input type="password" id="password" name="password" class="input-field" required placeholder="Password" />
             </div>
-
-            <input type="submit" value="Sign Up" class="sign-btn" />
+        
+            <input type="submit" value="Sign Up" id="sub" class="sign-btn" />
             <p id="signUpMessage" class="text"></p>
-
+        
             <p class="text">
               By signing up, I agree to the
               <a href="#">Terms of Services</a> and
@@ -546,6 +92,7 @@ main.sign-up-mode .carousel {
             </p>
           </div>
         </form>
+        
       </div>
 
       <div class="carousel">
@@ -573,170 +120,169 @@ main.sign-up-mode .carousel {
       </div>
     </div>
   </div>
-</main>
-
+</main> 
+<div id="signUpMessage" class="alert"></div>
+<div id="signInMessage" class="alert"></div>
 <script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
-  import {
-    getAuth,
-    createUserWithEmailAndPassword,
-    signInWithEmailAndPassword,
-  } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
-  import {
-    getFirestore,
-    setDoc,
-    doc,
-  } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+import {
+  getFirestore,
+  setDoc,
+  doc,
+} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyDof1osvm7sUifygPIqH_UyHdZLIRh-Kmo",
-    authDomain: "giolla-974a3.firebaseapp.com",
-    projectId: "giolla-974a3",
-    storageBucket: "giolla-974a3.appspot.com",
-    messagingSenderId: "665088692194",
-    appId: "1:665088692194:web:dd1c57d4261cc5fe5973bb",
-  };
+const firebaseConfig = {
+  apiKey: "AIzaSyDof1osvm7sUifygPIqH_UyHdZLIRh-Kmo",
+  authDomain: "giolla-974a3.firebaseapp.com",
+  projectId: "giolla-974a3",
+  storageBucket: "giolla-974a3.appspot.com",
+  messagingSenderId: "665088692194",
+  appId: "1:665088692194:web:dd1c57d4261cc5fe5973bb",
+};
 
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth();
-  const db = getFirestore();
+const app = initializeApp(firebaseConfig);
+const auth = getAuth();
+const db = getFirestore();
 
-  function showMessage(message, divId) {
-    const messageDiv = document.getElementById(divId);
-    messageDiv.style.display = "block";
-    messageDiv.innerHTML = message;
-    messageDiv.style.opacity = 1;
-    setTimeout(function () {
-      messageDiv.style.opacity = 0;
-    }, 5000);
-  }
+function showMessage(message, divId) {
+  const messageDiv = document.getElementById(divId);
+  messageDiv.style.display = "block";
+  messageDiv.innerHTML = message;
+  messageDiv.style.opacity = 1;
+  setTimeout(function () {
+    messageDiv.style.opacity = 0;
+  }, 1000);
+}
 
-  // Sign-up logic
-  document.getElementById("signUpForm").addEventListener("submit", (event) => {
-    event.preventDefault();
+// Sign-up logic
+document.getElementById("signUpForm").addEventListener("submit", (event) => {
+  event.preventDefault();
 
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-    const firstname = document.getElementById("firstname").value;
-    const lastname = document.getElementById("lastname").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const firstname = document.getElementById("firstname").value;
+  const lastname = document.getElementById("lastname").value;
 
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        const userData = {
-          email: email,
-          firstname: firstname,
-          lastname: lastname,
-        };
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      const userData = {
+        email: email,
+        firstname: firstname,
+        lastname: lastname,
+      };
 
-        const docRef = doc(db, "users", user.uid);
-        setDoc(docRef, userData)
-          .then(() => {
-            showMessage("Account created successfully!", "signUpMessage");
-            window.location.href = "dashboard.html";
-          })
-          .catch((error) => {
-            console.error("Firestore error:", error);
-            showMessage("Error storing user data in Firestore", "signUpMessage");
-          });
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        if (errorCode === "auth/email-already-in-use") {
-          showMessage("This email is already in use!", "signUpMessage");
-        } else {
-          showMessage("Error during sign-up: " + error.message, "signUpMessage");
-        }
-      });
-  });
-
-  // Sign-in logic
-  document.getElementById("signInForm").addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const emailI = document.getElementById("emailI").value;
-    const passwordI = document.getElementById("passwordI").value;
-
-    signInWithEmailAndPassword(auth, emailI, passwordI)
-      .then((userCredential) => {
-        showMessage("Login Successful", "signInMessage");
-        const user = userCredential.user;
-        localStorage.setItem("loggedInUserId", user.uid);
-        window.location.href = "dashboard.html";
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        if (errorCode === "auth/user-not-found") {
-          showMessage("Account not found", "signInMessage");
-        } else if (errorCode === "auth/wrong-password") {
-          showMessage("Incorrect password", "signInMessage");
-        } else {
-          showMessage("Error during sign-in: " + error.message, "signInMessage");
-        }
-      });
-  });
-</script>
-
-<script>
-  const inputs = document.querySelectorAll(".input-field");
-  const toggle_btn = document.querySelectorAll(".toggle");
-  const main = document.querySelector("main");
-  const bullets = document.querySelectorAll(".bullets span");
-  const images = document.querySelectorAll(".image");
-
-  inputs.forEach((inp) => {
-    inp.addEventListener("focus", () => {
-      const parent = inp.parentElement;
-      parent.classList.add("focus");
-    });
-
-    inp.addEventListener("blur", () => {
-      if (inp.value === "") {
-        const parent = inp.parentElement;
-        parent.classList.remove("focus");
+      const docRef = doc(db, "users", user.uid);
+      setDoc(docRef, userData)
+        .then(() => {
+          alert("Account creation successful! redirecting now....");
+          window.location.href = "dashboard.html";
+        })
+        .catch((error) => {
+          console.error("Firestore error:", error);
+          alert("Error storing user data in Firestore");
+        });
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      if (errorCode === "auth/email-already-in-use") {
+        alert("This email is already in use!");
+      } else {
+        alert("Email is already in use");
       }
     });
-  });
+});
 
-  toggle_btn.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      main.classList.toggle("sign-up-mode");
+// Sign-in logic
+document.getElementById("signInForm").addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const emailI = document.getElementById("emailI").value;
+  const passwordI = document.getElementById("passwordI").value;
+
+  signInWithEmailAndPassword(auth, emailI, passwordI)
+    .then((userCredential) => {
+      alert("Login Successful! redirecting now....");
+      const user = userCredential.user;
+      localStorage.setItem("loggedInUserId", user.uid);
+      window.location.href = "dashboard.html";
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      if (errorCode === "auth/user-not-found") {
+        alert("Account not found");
+      } else if (errorCode === "auth/wrong-password") {
+        alert("Incorrect password");
+      } else {
+        alert("Wrong Email or Password inputed");
+      }
     });
+});
+
+const inputs = document.querySelectorAll(".input-field");
+const toggle_btn = document.querySelectorAll(".toggle");
+const main = document.querySelector("main");
+const bullets = document.querySelectorAll(".bullets span");
+const images = document.querySelectorAll(".image");
+
+inputs.forEach((inp) => {
+  inp.addEventListener("focus", () => {
+    const parent = inp.parentElement;
+    parent.classList.add("focus");
   });
 
-  let index = 1;
-  setInterval(() => {
-    index++;
-    if (index > images.length) {
-      index = 1;
+  inp.addEventListener("blur", () => {
+    if (inp.value === "") {
+      const parent = inp.parentElement;
+      parent.classList.remove("focus");
     }
-    changeImage(index);
-  }, 5000);
-
-  function changeImage(index) {
-    images.forEach((img) => {
-      img.classList.remove("show");
-    });
-    images[index - 1].classList.add("show");
-    updateBullets(index);
-  }
-
-  function updateBullets(index) {
-    bullets.forEach((bullet) => {
-      bullet.classList.remove("active");
-    });
-    bullets[index - 1].classList.add("active");
-  }
-
-  bullets.forEach((bullet) => {
-    bullet.addEventListener("click", () => {
-      const value = bullet.getAttribute("data-value");
-      changeImage(value);
-      index = value;
-    });
   });
-</script>
+});
 
+toggle_btn.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    main.classList.toggle("sign-up-mode");
+  });
+});
+
+let index = 1;
+setInterval(() => {
+  index++;
+  if (index > images.length) {
+    index = 1;
+  }
+  changeImage(index);
+}, 1000);
+
+function changeImage(index) {
+  images.forEach((img) => {
+    img.classList.remove("show");
+  });
+  images[index - 1].classList.add("show");
+  updateBullets(index);
+}
+
+function updateBullets(index) {
+  bullets.forEach((bullet) => {
+    bullet.classList.remove("active");
+  });
+  bullets[index - 1].classList.add("active");
+}
+
+bullets.forEach((bullet) => {
+  bullet.addEventListener("click", () => {
+    const value = bullet.getAttribute("data-value");
+    changeImage(value);
+    index = value;
+  });
+});
+
+</script>
 
 
 </body>

@@ -881,7 +881,7 @@ body {
   .user-info {
   display: flex;
   flex-direction: column;
-  border: 3px solid hsla(210, 63%, 42%, 0.5);
+  border-bottom: 3px solid hsla(210, 63%, 42%, 0.5);
   padding: 6px 5px;
   background: #fff;
   border-radius: 20px;
@@ -924,7 +924,7 @@ body {
 }
 
 #signOutBtn:hover {
-  background-color: #c0392b; /* Darker red on hover */
+  background-color: #0056b3; /* Darker red on hover */
 }
 
 
