@@ -46,72 +46,72 @@
   <!-- 
     - #HEADER
   -->
+<header class="header" data-header>
+  <div class="container">
 
-  <header class="header" data-header>
-    <div class="container">
+    <a href="#" class="logo">
+      <img src="assets/images/giolla-fav.png" alt="Giolla logo"><b>GIOLLA_AGENCY</b>
+    </a>
 
-      <a href="#" class="logo">
-        <img src="assets/images/giolla-fav.png" alt="Giolla logo"><b>GIOLLA_AGENCY</b>
-      </a>
+    <nav class="navbar" data-navbar>
 
-      <nav class="navbar" data-navbar>
+      <div class="wrapper">
+        <a href="#" class="logo">
+          <img src="assets/images/giolla-fav.png" alt="Giolla logo"><b>GIOLLA_AGENCY</b>
+        </a>
 
-        <div class="wrapper">
-          <a href="#" class="logo">
-            <img src="assets/images/giolla-fav.png" alt="Giolla logo"><b>GIOLLA_AGENCY</b>
-          </a>
+        <button class="nav-close-btn" aria-label="Close menu" data-nav-toggler>
+          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+        </button>
+      </div>
 
-          <button class="nav-close-btn" aria-label="Close menu" data-nav-toggler>
-            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
-          </button>
+      <ul class="navbar-list">
+        <li><a href="#home" class="navbar-link" data-nav-link>Home</a></li>
+        <li><a href="#about" class="navbar-link" data-nav-link>About</a></li>
+        <li><a href="#services" class="navbar-link" data-nav-link>Services</a></li>
+        <li><a href="#features" class="navbar-link" data-nav-link>Features</a></li>
+        <li><a href="#" class="navbar-link" data-nav-link>Blog</a></li>
+        <li><a href="#" class="navbar-link" data-nav-link>Contact Us</a></li>
+      </ul>
+
+    </nav>
+
+    <a>
+      <div class="user-info">
+        <div class="io">
+          <ion-icon name="person-circle" id="userIcon"></ion-icon>
+          <div id="loggedUserFirstname"></div>
         </div>
+        <button id="signOutBtn" style="display: none;">
+          <ion-icon name="log-out-outline"></ion-icon>
+        </button>
+        <script>
 
-        <ul class="navbar-list">
-          <li><a href="#home" class="navbar-link" data-nav-link>Home</a></li>
-          <li><a href="#about" class="navbar-link" data-nav-link>About</a></li>
-          <li><a href="#services" class="navbar-link" data-nav-link>Services</a></li>
-          <li><a href="#features" class="navbar-link" data-nav-link>Features</a></li>
-          <li><a href="#" class="navbar-link" data-nav-link>Blog</a></li>
-          <li><a href="#" class="navbar-link" data-nav-link>Contact Us</a></li>
-        </ul>
+          // Add click event listener to the loggedUserFirstname
+          document.getElementById("loggedUserFirstname").addEventListener("click", () => {
+            const signOutBtn = document.getElementById("signOutBtn");
+            signOutBtn.style.display = signOutBtn.style.display === "none" ? "block" : "none"; // Toggle display
+          });
 
-      </nav>
-      
-      <a>
-        <div class="user-info">
-          <div class="io">
-            <ion-icon name="person-circle" id="userIcon"></ion-icon>
-            <div id="loggedUserFirstname"></div>
-          </div>
-          <button id="signOutBtn" style="display: none;">
-            <ion-icon name="log-out-outline"></ion-icon>
-          </button>
-          <script>
-
-            // Add click event listener to the loggedUserFirstname
-            document.getElementById("loggedUserFirstname").addEventListener("click", () => {
-              const signOutBtn = document.getElementById("signOutBtn");
-              signOutBtn.style.display = signOutBtn.style.display === "none" ? "block" : "none"; // Toggle display
+          // Sign out logic
+          document.getElementById("signOutBtn").addEventListener("click", () => {
+            auth.signOut().then(() => {
+              window.location.href = "register.html";
+            }).catch((error) => {
+              console.error("Error signing out:", error);
             });
-            
-            // Sign out logic
-            document.getElementById("signOutBtn").addEventListener("click", () => {
-              auth.signOut().then(() => {
-                window.location.href = "register.html";
-              }).catch((error) => {
-                console.error("Error signing out:", error);
-              });
-            });
-            
-            </script>
-      </a>
-      <button class="nav-open-btn" aria-label="Open menu" data-nav-toggler>
-        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
-      </button>
+          });
+
+        </script>
+  </div>
+    </a>
+    <button class="nav-open-btn" aria-label="Open menu" data-nav-toggler>
+      <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+    </button>
 
 
-<div class="overlay" data-nav-toggler data-overlay></div>
-
+    <div class="overlay" data-nav-toggler data-overlay></div>
+  
 </header>
 
 <main>

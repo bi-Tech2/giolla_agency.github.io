@@ -1070,7 +1070,8 @@ body {
     display: none;
   }
   .user-info{
-    right: 50px;
+    right: 10px;
+    top: 60px;
   }
  }
 
