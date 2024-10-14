@@ -1059,6 +1059,76 @@ body {
 
 
 
+/* Loading Screen Styles */
+#loadingScreen {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); /* Gradient background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  flex-direction: column;
+}
+
+.loader {
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  animation: fadeIn 1.5s ease-in-out; /* Smooth fade-in effect */
+}
+
+.logo-loader {
+  width: 120px;
+  margin-bottom: 20px;
+  animation: logoBounce 2s infinite; /* Logo bounce animation */
+}
+
+.loading-text {
+  color: #fff;
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif; /* Custom font */
+  letter-spacing: 2px;
+}
+
+.spinner {
+  border: 8px solid rgba(255, 255, 255, 0.2);
+  border-top: 8px solid #fff; /* White spinner */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite; /* Spinner animation */
+}
+
+.loading-message {
+  color: #e7e7e7;
+  font-size: 16px;
+  margin-top: 20px;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+  position: fixed;
+  bottom: 40px;
+}
+
+/* Keyframes for animations */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes logoBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); } /* Bounce effect */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 
 
 /**
@@ -1072,6 +1142,7 @@ body {
   .user-info{
     right: 10px;
     top: 60px;
+      border-bottom: 1.5px solid hsla(210, 63%, 42%, 0.5);
   }
  }
 
