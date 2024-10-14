@@ -86,6 +86,7 @@
           <li><a href="#features" class="navbar-link" data-nav-link>Features</a></li>
           <li><a href="#" class="navbar-link" data-nav-link>Blog</a></li>
           <li><a href="#" class="navbar-link" data-nav-link>Contact Us</a></li>
+          <li><a href="register.html" class="navbar-link dn" data-nav-link>Get started</a></li>
         </ul>
 
       </nav>
@@ -143,7 +144,21 @@
 
         </div>
       </section>
-
+      <div class="form-container">
+        <h2>Contact Us</h2>
+        <form action="send_email.php" method="POST">
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" name="name" required>
+    
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+    
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+    
+          <button type="submit">Send</button>
+        </form>
+      </div>
       <!-- 
         - #ABOUT
       -->
@@ -757,31 +772,31 @@
 <div class="testimonial-container">
   <div class="title-wrapper" style="margin-bottom: 40px;">
     <h2 class="h2 section-title">Discover Frequently Asked Questions?</h2>
-
   </div>
   <div class="testimonial-slider">
     <div class="testimonial-item">
-      <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Testimonial 1">
-      <h3>John Doe</h3>
+      <img src="./assets/images/giolla-fav.png" alt="Testimonial 1">
+      <h3>James Chukwuemeka</h3>
       <p>"This platform is amazing! The courses are very helpful and the instructors are great."</p>
     </div>
     <div class="testimonial-item">
-      <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Testimonial 2">
-      <h3>Jane Smith</h3>
+      <img src="./assets/images/giolla-fav.png" alt="Testimonial 2">
+      <h3>Bola Adebayo</h3>
       <p>"I've learned so much and now I feel more confident in my coding skills."</p>
     </div>
     <div class="testimonial-item">
-      <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Testimonial 3">
-      <h3>Michael Johnson</h3>
+      <img src="./assets/images/giolla-fav.png" alt="Testimonial 3">
+      <h3>Dickson Joshua</h3>
       <p>"The content is up-to-date and relevant. Highly recommend to anyone looking to learn!"</p>
     </div>
     <div class="testimonial-item">
-      <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Testimonial 4">
-      <h3>Sarah Wilson</h3>
+      <img src="./assets/images/giolla-fav.png" alt="Testimonial 4">
+      <h3>Ugo Esther</h3>
       <p>"Such a fantastic experience! The interactive quizzes were super engaging."</p>
     </div>
   </div>
 </div>
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
@@ -816,7 +831,7 @@
       </div>
       <div class="form-group">
         <label for="phone" class="form-label">Phone</label>
-        <input id="phone" name="phone" class="form-input" placeholder="+1 (234) 56789" type="text" />
+        <input id="phone" name="phone" class="form-input" placeholder="+2349133949585" type="text" />
       </div>
       <div class="form-group">
         <label for="message" class="form-label">Message</label>
@@ -1013,13 +1028,13 @@
 
 </footer>
 <script>
-// Wait 5 seconds before hiding the loading screen and showing the main content
-window.addEventListener('load', function () {
-  setTimeout(function () {
-    document.getElementById("loadingScreen").style.display = "none";
-    document.getElementById("mainContent").style.display = "block";
-  }, 5000); // 5000ms = 5 seconds
-});
+  // Wait 5 seconds before hiding the loading screen and showing the main content
+  window.addEventListener('load', function () {
+    setTimeout(function () {
+      document.getElementById("loadingScreen").style.display = "none";
+      document.getElementById("mainContent").style.display = "block";
+    }, 5000); // 5000ms = 5 seconds
+  });
 </script>
   <!-- 
     - custom js link
