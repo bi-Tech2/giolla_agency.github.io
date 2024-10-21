@@ -46,378 +46,378 @@
   <!-- 
     - #HEADER
   -->
-<header class="header" data-header>
-  <div class="container">
+  <header class="header" data-header>
+    <div class="container">
 
-    <a href="#" class="logo">
-      <img src="assets/images/giolla-fav.png" alt="Giolla logo"><b>GIOLLA_AGENCY</b>
-    </a>
+      <a href="index.html" class="logo">
+        <img src="assets/images/giolla-fav.png" alt="Giolla logo"><b>GIOLLA_AGENCY</b>
+      </a>
 
-    <nav class="navbar" data-navbar>
+      <nav class="navbar" data-navbar>
 
-      <div class="wrapper">
-        <a href="#" class="logo">
-          <img src="assets/images/giolla-fav.png" alt="Giolla logo"><b>GIOLLA_AGENCY</b>
-        </a>
+        <div class="wrapper">
+          <a href="index.html" class="logo">
+            <img src="assets/images/giolla-fav.png" alt="Giolla logo"><b>GIOLLA_AGENCY</b>
+          </a>
 
-        <button class="nav-close-btn" aria-label="Close menu" data-nav-toggler>
-          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
-        </button>
-      </div>
-
-      <ul class="navbar-list">
-        <li><a href="#home" class="navbar-link" data-nav-link>Home</a></li>
-        <li><a href="#about" class="navbar-link" data-nav-link>About</a></li>
-        <li><a href="#services" class="navbar-link" data-nav-link>Services</a></li>
-        <li><a href="#features" class="navbar-link" data-nav-link>Features</a></li>
-        <li><a href="#" class="navbar-link" data-nav-link>Blog</a></li>
-        <li><a href="#" class="navbar-link" data-nav-link>Contact Us</a></li>
-      </ul>
-
-    </nav>
-
-    <a>
-      <div class="user-info">
-        <div class="io">
-          <ion-icon name="person-circle" id="userIcon"></ion-icon>
-          <div id="loggedUserFirstname"></div>
+          <button class="nav-close-btn" aria-label="Close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
         </div>
-        <button id="signOutBtn" style="display: none;">
-          <ion-icon name="log-out-outline"></ion-icon>
-        </button>
-        <script>
 
-          // Add click event listener to the loggedUserFirstname
-          document.getElementById("loggedUserFirstname").addEventListener("click", () => {
-            const signOutBtn = document.getElementById("signOutBtn");
-            signOutBtn.style.display = signOutBtn.style.display === "none" ? "block" : "none"; // Toggle display
-          });
+        <ul class="navbar-list">
+          <li><a href="index.html" class="navbar-link" data-nav-link>Home</a></li>
+          <li><a href="about.html" class="navbar-link" data-nav-link>About</a></li>
+          <li><a href="service.html" class="navbar-link" data-nav-link>Services</a></li>
+          <li><a href="features.html" class="navbar-link" data-nav-link>Features</a></li>
+          <li><a href="blog.html" class="navbar-link" data-nav-link>Blog</a></li>
+          <li><a href="contact.html" class="navbar-link" data-nav-link>Contact Us</a></li>
+        </ul>
 
-          // Sign out logic
-          document.getElementById("signOutBtn").addEventListener("click", () => {
-            auth.signOut().then(() => {
-              window.location.href = "register.html";
-            }).catch((error) => {
-              console.error("Error signing out:", error);
+      </nav>
+
+      <a>
+        <div class="user-info">
+          <div class="io">
+            <ion-icon name="person-circle" id="userIcon"></ion-icon>
+            <div id="loggedUserFirstname"></div>
+          </div>
+          <button id="signOutBtn" style="display: none;">
+            <ion-icon name="log-out-outline"></ion-icon>
+          </button>
+          <script>
+
+            // Add click event listener to the loggedUserFirstname
+            document.getElementById("loggedUserFirstname").addEventListener("click", () => {
+              const signOutBtn = document.getElementById("signOutBtn");
+              signOutBtn.style.display = signOutBtn.style.display === "none" ? "block" : "none"; // Toggle display
             });
-          });
 
-        </script>
-  </div>
-    </a>
-    <button class="nav-open-btn" aria-label="Open menu" data-nav-toggler>
-      <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
-    </button>
+            // Sign out logic
+            document.getElementById("signOutBtn").addEventListener("click", () => {
+              auth.signOut().then(() => {
+                window.location.href = "register.html";
+              }).catch((error) => {
+                console.error("Error signing out:", error);
+              });
+            });
 
-
-    <div class="overlay" data-nav-toggler data-overlay></div>
-  
-</header>
-
-<main>
-  <article>
-
-    
-  </article>
-</main>
-
-
-    
-      <!-- 
-    - #SERVICE
-  -->
-
-      <section class="section service" id="services" aria-label="service">
-        <div class="container">
-
-          <p class="section-subtitle text-center">- What We Offer -</p>
-          <h2 class="h2 section-title text-center">Our Creative Services</h2>
-          <p class="section-text text-center">
-            Get the most of reduction in your team’s operating costs for the whole product which creates amazing UI/UX
-            experiences.
-          </p>
-
-          <ul class="grid-list">
-
-            <!-- Digital Marketing Services -->
-            <li>
-              <div class="service-card has-after">
-                <figure class="card-icon">
-                  <ion-icon class="ion" name="megaphone-outline"></ion-icon>
-                </figure>
-                <div class="card-content">
-                  <h3 class="h3 card-title">Digital Marketing Services</h3>
-                  <p class="card-text">Social Media Management, Content Creation, SEO, Email Marketing, Influencer
-                    Marketing.</p>
-                  <a href="#" class="btn-link">
-                    <span class="span">Read More</span>
-                    <ion-icon name="arrow-forward-outline" class="arr" aria-hidden="true"></ion-icon>
-                  </a>
-                </div>
-              </div>
-            </li>
-
-            <!-- Website Development and Design -->
-            <li>
-              <div class="service-card has-after">
-                <figure class="card-icon">
-                  <ion-icon class="ion" name="laptop-outline"></ion-icon>
-                </figure>
-                <div class="card-content">
-                  <h3 class="h3 card-title">Website Development and Design</h3>
-                  <p class="card-text">Website Development, Custom Website Design, Website Maintenance, Web Application
-                    Development.</p>
-                  <a href="#" class="btn-link">
-                    <span class="span">Read More</span>
-                    <ion-icon name="arrow-forward-outline" class="arr" aria-hidden="true"></ion-icon>
-                  </a>
-                </div>
-              </div>
-            </li>
-
-
-            <li>
-              <div class="service-card has-after">
-                <figure class="card-icon">
-                  <ion-icon class="ion" name="brush-outline"></ion-icon>
-                </figure>
-                <div class="card-content">
-                  <h3 class="h3 card-title">Custom Design Solutions</h3>
-                  <p class="card-text">Tailored design services that meet your unique branding and usability
-                    requirements.</p>
-                  <a href="#" class="btn-link">
-                    <span class="span">Read More</span>
-                    <ion-icon name="arrow-forward-outline" class="arr" aria-hidden="true"></ion-icon>
-                  </a>
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="service-card has-after">
-                <figure class="card-icon">
-                  <ion-icon class="ion" name="search-outline"></ion-icon>
-                </figure>
-                <div class="card-content">
-                  <h3 class="h3 card-title">SEO Optimization</h3>
-                  <p class="card-text">Comprehensive search engine optimization services to improve visibility and
-                    engagement.</p>
-                  <a href="#" class="btn-link">
-                    <span class="span">Read More</span>
-                    <ion-icon name="arrow-forward-outline" class="arr" aria-hidden="true"></ion-icon>
-                  </a>
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="service-card has-after">
-                <figure class="card-icon">
-                  <ion-icon class="ion" name="document-text-outline"></ion-icon>
-                </figure>
-                <div class="card-content">
-                  <h3 class="h3 card-title">CMS Integration</h3>
-                  <p class="card-text">Easy-to-use CMS integration for effortless content management and updates.</p>
-                  <a href="#" class="btn-link">
-                    <span class="span">Read More</span>
-                    <ion-icon name="arrow-forward-outline" class="arr" aria-hidden="true"></ion-icon>
-                  </a>
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="service-card has-after">
-                <figure class="card-icon">
-                  <ion-icon class="ion" name="phone-portrait-outline"></ion-icon>
-                </figure>
-                <div class="card-content">
-                  <h3 class="h3 card-title">Mobile App Development</h3>
-                  <p class="card-text">Full-cycle mobile app development services for iOS and Android platforms.</p>
-                  <a href="#" class="btn-link">
-                    <span class="span">Read More</span>
-                    <ion-icon name="arrow-forward-outline" class="arr" aria-hidden="true"></ion-icon>
-                  </a>
-                </div>
-              </div>
-            </li>
-
-
-
-            <!-- Branding and Visual Identity -->
-            <li>
-              <div class="service-card has-after">
-                <figure class="card-icon">
-                  <ion-icon class="ion" name="color-palette-outline"></ion-icon>
-                </figure>
-                <div class="card-content">
-                  <h3 class="h3 card-title">Branding and Visual Identity</h3>
-                  <p class="card-text">Logo Design, Brand Guidelines, Brochure Design, Business Card Design.</p>
-                  <a href="#" class="btn-link">
-                    <span class="span">Read More</span>
-                    <ion-icon name="arrow-forward-outline" class="arr" aria-hidden="true"></ion-icon>
-                  </a>
-                </div>
-              </div>
-            </li>
-
-            <!-- Content Creation -->
-            <li>
-              <div class="service-card has-after">
-                <figure class="card-icon">
-                  <ion-icon class="ion" name="create-outline"></ion-icon>
-                </figure>
-                <div class="card-content">
-                  <h3 class="h3 card-title">Content Creation</h3>
-                  <p class="card-text">Copywriting, Video Production, Photography, Blog Writing.</p>
-                  <a href="#" class="btn-link">
-                    <span class="span">Read More</span>
-                    <ion-icon name="arrow-forward-outline" class="arr" aria-hidden="true"></ion-icon>
-                  </a>
-                </div>
-              </div>
-            </li>
-
-            <!-- Strategy and Consulting -->
-            <li>
-              <div class="service-card has-after">
-                <figure class="card-icon">
-                  <ion-icon class="ion" name="analytics-outline"></ion-icon>
-                </figure>
-                <div class="card-content">
-                  <h3 class="h3 card-title">Strategy and Consulting</h3>
-                  <p class="card-text">Business Strategy Development, Marketing Strategy, Operations Consulting, HR
-                    Consulting.</p>
-                  <a href="#" class="btn-link">
-                    <span class="span">Read More</span>
-                    <ion-icon name="arrow-forward-outline" class="arr" aria-hidden="true"></ion-icon>
-                  </a>
-                </div>
-              </div>
-            </li>
-
-            <!-- E-commerce Solutions -->
-            <li>
-              <div class="service-card has-after">
-                <figure class="card-icon">
-                  <ion-icon class="ion" name="cart-outline"></ion-icon>
-                </figure>
-                <div class="card-content">
-                  <h3 class="h3 card-title">E-commerce Solutions</h3>
-                  <p class="card-text">Online Store Setup, Payment Gateway Integration, Logistics and Supply Chain
-                    Management.</p>
-                  <a href="#" class="btn-link">
-                    <span class="span">Read More</span>
-                    <ion-icon name="arrow-forward-outline" class="arr" aria-hidden="true"></ion-icon>
-                  </a>
-                </div>
-              </div>
-            </li>
-
-            <!-- Cybersecurity Services -->
-            <li>
-              <div class="service-card has-after">
-                <figure class="card-icon">
-                  <ion-icon class="ion" name="shield-checkmark-outline"></ion-icon>
-                </figure>
-                <div class="card-content">
-                  <h3 class="h3 card-title">Cybersecurity Services</h3>
-                  <p class="card-text">Website Security, Network Security, Data Protection, Penetration Testing.</p>
-                  <a href="#" class="btn-link">
-                    <span class="span">Read More</span>
-                    <ion-icon name="arrow-forward-outline" class="arr" aria-hidden="true"></ion-icon>
-                  </a>
-                </div>
-              </div>
-            </li>
-
-            <!-- Data Analysis and Science -->
-            <li>
-              <div class="service-card has-after">
-                <figure class="card-icon">
-                  <ion-icon class="ion" name="stats-chart-outline"></ion-icon>
-                </figure>
-                <div class="card-content">
-                  <h3 class="h3 card-title">Data Analysis and Science</h3>
-                  <p class="card-text">Data Analytics, Business Intelligence, Market Research, Data Visualization.</p>
-                  <a href="#" class="btn-link">
-                    <span class="span">Read More</span>
-                    <ion-icon name="arrow-forward-outline" class="arr" aria-hidden="true"></ion-icon>
-                  </a>
-                </div>
-              </div>
-            </li>
-
-          </ul>
-
-          <a href="#" class="btn btn-primary text-center">Get Started</a>
-
+          </script>
         </div>
-      </section>
+      </a>
+      <button class="nav-open-btn" aria-label="Open menu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </button>
 
 
+      <div class="overlay" data-nav-toggler data-overlay></div>
 
+  </header>
 
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
-
-    
-
- <section class="contact-section">
-  <div class="contact-intro">
-    <h2 class="contact-title">Get in Touch</h2>
-    <p class="contact-description">
-      Fill out the form below and we'll get back to you as soon as possible.
-    </p>
-  </div>
-
-  <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-
-    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
-    <input type="hidden" name="subject" value="New Contact Form Submission from Web3Forms" />
-    <input type="hidden" name="from_name" value="My Website" />
-
-    <div class="form-group-container">
-      <div class="form-group">
-        <label for="name" class="form-label">Name</label>
-        <input id="name" name="name" class="form-input" placeholder="Your name" type="text" />
-      </div>
-      <div class="form-group">
-        <label for="email" class="form-label">Email</label>
-        <input id="email" name="email" class="form-input" placeholder="Your email" type="email" />
-      </div>
-      <div class="form-group">
-        <label for="phone" class="form-label">Phone</label>
-        <input id="phone" name="phone" class="form-input" placeholder="+1 (234) 56789" type="text" />
-      </div>
-      <div class="form-group">
-        <label for="message" class="form-label">Message</label>
-        <textarea class="form-textarea" id="message" name="message" placeholder="Your message"></textarea>
-      </div>
-    </div>
-    <div class="w" style="width: 100%;display: flex;justify-content: center;">
-      <button class="form-submit" type="submit">Send Message</button>
-    </div>
-  </form>
-
-
-</section>
-
-<section class="section cta" aria-label="call to action">
-  <div class="container">
-    <div class="cta-content">
-      <h2 class="h2 cta-title">Ready to Take Your Business to the Next Level?</h2>
-      <p class="cta-text">Get started with our expert services today and watch your business thrive!</p>
-      <a href="#" class="btn btn-primary">Get Started</a>
-    </div>
-  </div>
-</section>
+  <main>
+    <article>
 
 
     </article>
+  </main>
+
+
+
+  <!-- 
+    - #SERVICE
+  -->
+
+  <section class="section service" id="services" aria-label="service">
+    <div class="container">
+
+      <p class="section-subtitle text-center">- What We Offer -</p>
+      <h2 class="h2 section-title text-center">Our Creative Services</h2>
+      <p class="section-text text-center">
+        Get the most of reduction in your team’s operating costs for the whole product which creates amazing UI/UX
+        experiences.
+      </p>
+
+      <ul class="grid-list">
+
+        <!-- Digital Marketing Services -->
+        <li>
+          <div class="service-card has-after">
+            <figure class="card-icon">
+              <ion-icon class="ion" name="megaphone-outline"></ion-icon>
+            </figure>
+            <div class="card-content">
+              <h3 class="h3 card-title">Digital Marketing Services</h3>
+              <p class="card-text">Social Media Management, Content Creation, SEO, Email Marketing, Influencer
+                Marketing.</p>
+              <a href="digital.html" class="btn-link">
+                <span class="span">Read More</span>
+                <ion-icon name="arrow-forward-outline" class="arr" aria-hidden="true"></ion-icon>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Website Development and Design -->
+        <li>
+          <div class="service-card has-after">
+            <figure class="card-icon">
+              <ion-icon class="ion" name="laptop-outline"></ion-icon>
+            </figure>
+            <div class="card-content">
+              <h3 class="h3 card-title">Website Development and Design</h3>
+              <p class="card-text">Website Development, Custom Website Design, Website Maintenance, Web Application
+                Development.</p>
+              <a href="webdev.html" class="btn-link">
+                <span class="span">Read More</span>
+                <ion-icon name="arrow-forward-outline" class="arr" aria-hidden="true"></ion-icon>
+              </a>
+            </div>
+          </div>
+        </li>
+
+
+        <li>
+          <div class="service-card has-after">
+            <figure class="card-icon">
+              <ion-icon class="ion" name="brush-outline"></ion-icon>
+            </figure>
+            <div class="card-content">
+              <h3 class="h3 card-title">Custom Design Solutions</h3>
+              <p class="card-text">Tailored design services that meet your unique branding and usability
+                requirements.</p>
+              <a href="custom.html" class="btn-link">
+                <span class="span">Read More</span>
+                <ion-icon name="arrow-forward-outline" class="arr" aria-hidden="true"></ion-icon>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="service-card has-after">
+            <figure class="card-icon">
+              <ion-icon class="ion" name="search-outline"></ion-icon>
+            </figure>
+            <div class="card-content">
+              <h3 class="h3 card-title">SEO Optimization</h3>
+              <p class="card-text">Comprehensive search engine optimization services to improve visibility and
+                engagement.</p>
+              <a href="seo.html" class="btn-link">
+                <span class="span">Read More</span>
+                <ion-icon name="arrow-forward-outline" class="arr" aria-hidden="true"></ion-icon>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="service-card has-after">
+            <figure class="card-icon">
+              <ion-icon class="ion" name="document-text-outline"></ion-icon>
+            </figure>
+            <div class="card-content">
+              <h3 class="h3 card-title">CMS Integration</h3>
+              <p class="card-text">Easy-to-use CMS integration for effortless content management and updates.</p>
+              <a href="cms.html" class="btn-link">
+                <span class="span">Read More</span>
+                <ion-icon name="arrow-forward-outline" class="arr" aria-hidden="true"></ion-icon>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="service-card has-after">
+            <figure class="card-icon">
+              <ion-icon class="ion" name="phone-portrait-outline"></ion-icon>
+            </figure>
+            <div class="card-content">
+              <h3 class="h3 card-title">Mobile App Development</h3>
+              <p class="card-text">Full-cycle mobile app development services for iOS and Android platforms.</p>
+              <a href="mobile.html" class="btn-link">
+                <span class="span">Read More</span>
+                <ion-icon name="arrow-forward-outline" class="arr" aria-hidden="true"></ion-icon>
+              </a>
+            </div>
+          </div>
+        </li>
+
+
+
+        <!-- Branding and Visual Identity -->
+        <li>
+          <div class="service-card has-after">
+            <figure class="card-icon">
+              <ion-icon class="ion" name="color-palette-outline"></ion-icon>
+            </figure>
+            <div class="card-content">
+              <h3 class="h3 card-title">Branding and Visual Identity</h3>
+              <p class="card-text">Logo Design, Brand Guidelines, Brochure Design, Business Card Design.</p>
+              <a href="branding.html" class="btn-link">
+                <span class="span">Read More</span>
+                <ion-icon name="arrow-forward-outline" class="arr" aria-hidden="true"></ion-icon>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Content Creation -->
+        <li>
+          <div class="service-card has-after">
+            <figure class="card-icon">
+              <ion-icon class="ion" name="create-outline"></ion-icon>
+            </figure>
+            <div class="card-content">
+              <h3 class="h3 card-title">Content Creation</h3>
+              <p class="card-text">Copywriting, Video Production, Photography, Blog Writing.</p>
+              <a href="content.html" class="btn-link">
+                <span class="span">Read More</span>
+                <ion-icon name="arrow-forward-outline" class="arr" aria-hidden="true"></ion-icon>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Strategy and Consulting -->
+        <li>
+          <div class="service-card has-after">
+            <figure class="card-icon">
+              <ion-icon class="ion" name="analytics-outline"></ion-icon>
+            </figure>
+            <div class="card-content">
+              <h3 class="h3 card-title">Strategy and Consulting</h3>
+              <p class="card-text">Business Strategy Development, Marketing Strategy, Operations Consulting, HR
+                Consulting.</p>
+              <a href="stratagy.html" class="btn-link">
+                <span class="span">Read More</span>
+                <ion-icon name="arrow-forward-outline" class="arr" aria-hidden="true"></ion-icon>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <!-- E-commerce Solutions -->
+        <li>
+          <div class="service-card has-after">
+            <figure class="card-icon">
+              <ion-icon class="ion" name="cart-outline"></ion-icon>
+            </figure>
+            <div class="card-content">
+              <h3 class="h3 card-title">E-commerce Solutions</h3>
+              <p class="card-text">Online Store Setup, Payment Gateway Integration, Logistics and Supply Chain
+                Management.</p>
+              <a href="ecommerce.html" class="btn-link">
+                <span class="span">Read More</span>
+                <ion-icon name="arrow-forward-outline" class="arr" aria-hidden="true"></ion-icon>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Cybersecurity Services -->
+        <li>
+          <div class="service-card has-after">
+            <figure class="card-icon">
+              <ion-icon class="ion" name="shield-checkmark-outline"></ion-icon>
+            </figure>
+            <div class="card-content">
+              <h3 class="h3 card-title">Cybersecurity Services</h3>
+              <p class="card-text">Website Security, Network Security, Data Protection, Penetration Testing.</p>
+              <a href="cyber.html" class="btn-link">
+                <span class="span">Read More</span>
+                <ion-icon name="arrow-forward-outline" class="arr" aria-hidden="true"></ion-icon>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Data Analysis and Science -->
+        <li>
+          <div class="service-card has-after">
+            <figure class="card-icon">
+              <ion-icon class="ion" name="stats-chart-outline"></ion-icon>
+            </figure>
+            <div class="card-content">
+              <h3 class="h3 card-title">Data Analysis and Science</h3>
+              <p class="card-text">Data Analytics, Business Intelligence, Market Research, Data Visualization.</p>
+              <a href="data.html" class="btn-link">
+                <span class="span">Read More</span>
+                <ion-icon name="arrow-forward-outline" class="arr" aria-hidden="true"></ion-icon>
+              </a>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+
+      <a href="register.html" class="btn btn-primary text-center">Get Started</a>
+
+    </div>
+  </section>
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
+
+
+
+  <section class="contact-section">
+    <div class="contact-intro">
+      <h2 class="contact-title">Get in Touch</h2>
+      <p class="contact-description">
+        Fill out the form below and we'll get back to you as soon as possible.
+      </p>
+    </div>
+
+    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+
+      <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+      <input type="hidden" name="subject" value="New Contact Form Submission from Web3Forms" />
+      <input type="hidden" name="from_name" value="My Website" />
+
+      <div class="form-group-container">
+        <div class="form-group">
+          <label for="name" class="form-label">Name</label>
+          <input id="name" name="name" class="form-input" placeholder="Your name" type="text" />
+        </div>
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input id="email" name="email" class="form-input" placeholder="Your email" type="email" />
+        </div>
+        <div class="form-group">
+          <label for="phone" class="form-label">Phone</label>
+          <input id="phone" name="phone" class="form-input" placeholder="+1 (234) 56789" type="text" />
+        </div>
+        <div class="form-group">
+          <label for="message" class="form-label">Message</label>
+          <textarea class="form-textarea" id="message" name="message" placeholder="Your message"></textarea>
+        </div>
+      </div>
+      <div class="w" style="width: 100%;display: flex;justify-content: center;">
+        <button class="form-submit" type="submit">Send Message</button>
+      </div>
+    </form>
+
+
+  </section>
+
+  <section class="section cta" aria-label="call to action">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="h2 cta-title">Ready to Take Your Business to the Next Level?</h2>
+        <p class="cta-text">Get started with our expert services today and watch your business thrive!</p>
+        <a href="register.html" class="btn btn-primary">Get Started</a>
+      </div>
+    </div>
+  </section>
+
+
+  </article>
   </main>
 
 
@@ -428,174 +428,172 @@
     - #FOOTER
 -->
 
-<footer class="footer">
+  <footer class="footer">
 
-  <div class="footer-top section">
-    <div class="container">
+    <div class="footer-top section">
+      <div class="container">
 
-      <div class="footer-brand">
+        <div class="footer-brand">
 
-        <a href="#" class="logo"><img src="assets/images/giolla-fav.png" alt=""><b>GIOLLA_AGENCY</b></a>
+          <a href="index.html" class="logo"><img src="assets/images/giolla-fav.png" alt=""><b>GIOLLA_AGENCY</b></a>
 
-        <p class="footer-text">
-          Welcome to Giolla Agency, where we craft digital solutions. From strategy to execution, we're here to elevate your brand.
-        </p>
+          <p class="footer-text">
+            Welcome to Giolla Agency, where we craft digital solutions. From strategy to execution, we're here to
+            elevate your brand.
+          </p>
 
-        <form action="" class="newsletter-form">
-          <input type="email" name="email_address" placeholder="Enter your email" required class="email-field">
+          <form action="" class="newsletter-form">
+            <input type="email" name="email_address" placeholder="Enter your email" required class="email-field">
 
-          <button type="submit" class="form-btn">
-            <ion-icon name="paper-plane" aria-hidden="true"></ion-icon>
-          </button>
-        </form>
+            <button type="submit" class="form-btn">
+              <ion-icon name="paper-plane" aria-hidden="true"></ion-icon>
+            </button>
+          </form>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Our Services</p>
+          </li>
+
+          <li>
+            <a href="stratagy.html" class="footer-link">Strategy & Research</a>
+          </li>
+
+          <li>
+            <a href="webdev.html" class="footer-link">Web Development</a>
+          </li>
+
+          <li>
+            <a href="digital.html" class="footer-link">Digital Marketing</a>
+          </li>
+
+          <li>
+            <a href="app.html" class="footer-link">App Design & Development</a>
+          </li>
+
+          <li>
+            <a href="ecommerce.html" class="footer-link">E-commerce Solutions</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Company</p>
+          </li>
+
+          <li>
+            <a href="about.html" class="footer-link">About Us</a>
+          </li>
+
+          <li>
+            <a href="service.html" class="footer-link">Our Services</a>
+          </li>
+
+          <li>
+            <a href="portfolio.html" class="footer-link">Portfolio</a>
+          </li>
+
+          <li>
+            <a href="blog.html" class="footer-link">News & Updates</a>
+          </li>
+
+          <li>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Contact Us</p>
+          </li>
+
+          <li class="footer-item">
+            <ion-icon name="location" aria-hidden="true"></ion-icon>
+
+            <address class="contact-link address">
+              Gwarinpa, Abuja, Nigeria.
+            </address>
+          </li>
+
+          <li class="footer-item">
+            <ion-icon name="call" aria-hidden="true"></ion-icon>
+
+            <a href="tel:+2349133949585" class="contact-link">+2349133949585</a>
+          </li>
+
+          <li class="footer-item">
+            <ion-icon name="mail" aria-hidden="true"></ion-icon>
+
+            <a href="mailto:giolla.world.wide@gmail.com" class="contact-link">giolla.world.wide@gmail.com</a>
+          </li>
+
+          <li class="footer-item">
+            <ul class="social-list">
+
+              <li>
+                <a href="https://www.facebook.com/profile.php?id=100084568732450&mibextid=JRoKGi" class="social-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a class="social-link">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="https://www.instagram.com/giolla_agency/profilecard/?igsh=Z21pdXRpNDVndXB4"
+                  class="social-link">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="https://www.linkedin.com/in/giolla-agency-giolla-a26a4a330" class="social-link">
+                  <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+
+        </ul>
 
       </div>
-
-      <ul class="footer-list">
-
-        <li>
-          <p class="footer-list-title">Our Services</p>
-        </li>
-
-        <li>
-          <a href="#" class="footer-link">Strategy & Research</a>
-        </li>
-
-        <li>
-          <a href="#" class="footer-link">Web Development</a>
-        </li>
-
-        <li>
-          <a href="#" class="footer-link">Digital Marketing</a>
-        </li>
-
-        <li>
-          <a href="#" class="footer-link">App Design & Development</a>
-        </li>
-
-        <li>
-          <a href="#" class="footer-link">E-commerce Solutions</a>
-        </li>
-
-      </ul>
-
-      <ul class="footer-list">
-
-        <li>
-          <p class="footer-list-title">Company</p>
-        </li>
-
-        <li>
-          <a href="#" class="footer-link">About Us</a>
-        </li>
-
-        <li>
-          <a href="#" class="footer-link">Our Services</a>
-        </li>
-
-        <li>
-          <a href="#" class="footer-link">Portfolio</a>
-        </li>
-
-        <li>
-          <a href="#" class="footer-link">News & Updates</a>
-        </li>
-
-        <li>
-          <a href="#" class="footer-link">Contact</a>
-        </li>
-
-      </ul>
-
-      <ul class="footer-list">
-
-        <li>
-          <p class="footer-list-title">Contact Us</p>
-        </li>
-
-        <li class="footer-item">
-          <ion-icon name="location" aria-hidden="true"></ion-icon>
-
-          <address class="contact-link address">
-            Gwarinpa, Abuja, Nigeria. 
-          </address>
-        </li>
-
-        <li class="footer-item">
-          <ion-icon name="call" aria-hidden="true"></ion-icon>
-
-          <a href="tel:+2349133949585" class="contact-link">+2349133949585</a>
-        </li>
-
-        <li class="footer-item">
-          <ion-icon name="mail" aria-hidden="true"></ion-icon>
-
-          <a href="mailto:giolla.world.wide@gmail.com" class="contact-link">giolla.world.wide@gmail.com</a>
-        </li>
-
-        <li class="footer-item">
-          <ul class="social-list">
-
-            <li>
-              <a href="https://www.facebook.com/profile.php?id=100084568732450&mibextid=JRoKGi" class="social-link">
-                <ion-icon name="logo-facebook"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-twitter"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="https://www.instagram.com/giolla_agency/profilecard/?igsh=Z21pdXRpNDVndXB4" class="social-link">
-                <ion-icon name="logo-instagram"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="www.linkedin.com/in/giolla-agency-giolla-a26a4a330" class="social-link">
-                <ion-icon name="logo-linkedin"></ion-icon>
-              </a>
-            </li>
-
-          </ul>
-        </li>
-
-      </ul>
-
     </div>
-  </div>
 
-  <div class="footer-bottom">
-    <div class="container">
+    <div class="footer-bottom">
+      <div class="container">
 
-      <p class="copyright">
-        &copy; 2024 GIOLLA_AGENCY | All Rights Reserved by <a href="#" class="copyright-link">BiTech</a>
-      </p>
+        <p class="copyright">
+          &copy; 2024 GIOLLA_AGENCY | All Rights Reserved by <a href="tel:+2349130993464"
+            class="copyright-link">BiTech</a>
+        </p>
 
-      <ul class="footer-bottom-list">
+        <ul class="footer-bottom-list">
 
-        <li>
-          <a href="#" class="footer-bottom-link">Privacy Policy</a>
-        </li>
+          <li>
+            <a href="privacy.html" class="footer-bottom-link">Privacy Policy</a>
+          </li>
 
-        <li>
-          <a href="#" class="footer-bottom-link">Terms of Use</a>
-        </li>
+          <li>
+            <a href="terms.html" class="footer-bottom-link">Terms of Use</a>
+          </li>
 
-      </ul>
+        </ul>
 
+      </div>
     </div>
-  </div>
 
-</footer>
-
-
-
-
-
+  </footer>
 
   <!-- 
     - custom js link

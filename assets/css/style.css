@@ -1143,15 +1143,15 @@ body {
 /* Media Query for very small screens */
 @media (max-width: 480px) {
   .logo-loader {
-    width: 60px; /* Even smaller logo */
+    width: 90px; /* Even smaller logo */
   }
   .loading-text {
-    font-size: 16px;
+    font-size: 22px;
   }
   .spinner {
-    width: 30px;
-    height: 30px;
-    border-width: 5px; /* Spinner gets smaller */
+    width: 37px;
+    height: 37px;
+    border-width: 7px; /* Spinner gets smaller */
   }
   .loading-message {
     font-size: 12px;
