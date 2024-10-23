@@ -1169,11 +1169,6 @@ body {
   .io ion-icon{
     display: none;
   }
-  .user-info{
-    right: 10px;
-    top: 60px;
-      border-bottom: 1.5px solid hsla(210, 63%, 42%, 0.5);
-  }
  }
 
 
@@ -1608,4 +1603,191 @@ body {
   font-size: 1.2rem;
   color: #666;
   line-height: 1.5;
+}
+
+
+/* General styles */
+body {
+  font-family: 'Arial', sans-serif; /* Set a default font */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  background-color: #f4f4f4; /* Light background color for the whole page */
+}
+
+.welcome {
+  width: 100%;
+  background-color: #ffffff; /* Main background color */
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Adjusted gap for welcome section */
+  padding: 40px 20px;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
+}
+
+/* Detail box styles */
+.detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px; /* Increased padding for detail boxes */
+  background-color: #f8f9fa;
+  border-radius: 8px; /* Adjusted rounding for a softer look */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  margin: 10px; /* Reduced margin around detail box */
+}
+
+/* Text styles */
+.d1 {
+  font-size: 1.8rem; /* Increased font size for better readability */
+  color: #333;
+}
+
+.d2 {
+  display: flex;
+  align-items: center;
+}
+
+/* Search input styles */
+input[type="search"] {
+  min-width: 300px; /* Adjusted width for responsiveness */
+  padding: 12px; /* Increased padding */
+  border: 2px solid #007bff; /* Brighter border color */
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-right: 10px;
+  transition: border-color 0.3s;
+}
+
+input[type="search"]:focus {
+  border-color: #0056b3; /* Change border color on focus */
+  outline: none;
+}
+
+/* Button styles */
+.btn {
+  padding: 10px 20px; /* Increased padding */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 1rem; /* Consistent font size */
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* Additional text styles */
+.lab {
+  color: #302b63;
+  font-size: 14px; /* Slightly larger font size */
+}
+
+.ion-info {
+  color: #0f0c29;
+  font-size: 1.9rem; /* Increased font size */
+  font-weight: 700;
+}
+
+/* Info section */
+.info {
+  display: flex;
+  width: 100%;
+  padding: 20px 10px;
+  justify-content: space-evenly;
+}
+
+/* Greeting section */
+.greet {
+  display: flex;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+/* Image upload styles */
+.imgj {
+  position: relative;
+  width: 100%; /* Full width for responsiveness */
+  max-width: 300px; /* Max width constraint */
+  height: 200px;
+  overflow: hidden;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #f9f9f9;
+}
+
+.image-upload {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.image-upload img {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+}
+
+input[type="file"] {
+  display: none; /* Hide the actual file input */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .welcome {
+    padding: 23px 10px; /* Reduce padding on smaller screens */
+  }
+.detail{
+  flex-direction: column;
+  align-items: start;
+}
+  .d1 {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+    text-align: left;
+  }
+
+  .d2 {
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  input[type="search"] {
+    min-width: 200px;
+    padding: 7px;
+  }
+  .greet{
+    flex-direction: column;
+  }
+
+  .info {
+    text-align: center;
+    justify-content: space-between;
+    padding: 0;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    padding: 8px 16px; /* Adjust button size */
+    font-size: 0.9rem; /* Smaller font for buttons */
+  }
+
+  .lab {
+    font-size: 10px; /* Smaller font size for labels */
+  }
+  .ion-info{
+    font-size: 1.3rem;
+    font-weight: normal;
+  }
 }

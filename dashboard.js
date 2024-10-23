@@ -24,24 +24,36 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore();
 
+// Function to display user data
+const displayUserData = (userData) => {
+  const firstInitial = userData.firstname.charAt(0).toUpperCase();
+  const lastInitial = userData.lastname.charAt(0).toUpperCase();
+  const initials = `${firstInitial}${lastInitial}`;
+  
+  // Display user's initials
+  document.getElementById("loggedUserFirstname").innerText = initials;
+
+  // Display "Hello [firstname]" in the greeting
+  document.getElementById("userGreeting").innerText = `Hello, ${userData.firstname}`;
+  
+  // Add the last name and email to the HTML
+  document.getElementById("userFirstNameId").innerText = userData.firstname; // First Name
+  document.getElementById("userLastNameId").innerText = userData.lastname; // Last Name
+  document.getElementById("userEmailId").innerText = userData.email; // Email
+};
+
 // Check if the user is authenticated
 onAuthStateChanged(auth, (user) => {
   if (user) {
     const loggedInUserId = localStorage.getItem("loggedInUserId");
 
     if (loggedInUserId) {
-      const docRef = doc(db, "users", loggedInUserId); // Ensure "users" is the correct collection name
+      const docRef = doc(db, "users", loggedInUserId);
       getDoc(docRef)
         .then((docSnap) => {
           if (docSnap.exists()) {
             const userData = docSnap.data();
-
-            // Display only initials (First letter of first name + first letter of last name)
-            const firstInitial = userData.firstname.charAt(0).toUpperCase();
-            const lastInitial = userData.lastname.charAt(0).toUpperCase();
-            const initials = `${firstInitial}${lastInitial}`;
-
-            document.getElementById("loggedUserFirstname").innerText = initials;
+            displayUserData(userData);
           }
         })
         .catch((error) => {
@@ -49,35 +61,55 @@ onAuthStateChanged(auth, (user) => {
         });
     }
   } else {
-    // If no user is signed in, redirect to the register page
-    window.location.href = "register.html";
+    // If no user is signed in, check local storage for user data
+    const storedUserData = JSON.parse(localStorage.getItem("userData"));
+    if (storedUserData) {
+      displayUserData(storedUserData); // Display user data if available
+    } else {
+      // Redirect to the register page if no data is found
+      window.location.href = "register.html";
+    }
   }
 });
 
 // Add click event listener to the ion-icon to toggle Sign Out button
 document.getElementById("userIcon").addEventListener("click", () => {
-  console.log("User icon clicked!"); // Debugging
   const signOutBtn = document.getElementById("signOutBtn");
-  console.log("Current button display:", signOutBtn.style.display); // Debugging
-
+  
   // Toggle display between "block" and "none"
   signOutBtn.style.display = signOutBtn.style.display === "none" || !signOutBtn.style.display ? "block" : "none";
-  console.log("New button display:", signOutBtn.style.display); // Debugging
 });
 
 // Sign-out logic
 document.getElementById("signOutBtn").addEventListener("click", (event) => {
   event.preventDefault();
+  
+  // Ask the user for confirmation before signing out
+  const confirmSignOut = confirm("Are you sure you want to sign out? You will need to log in again.");
+  if (confirmSignOut) {
+    signOut(auth)
+      .then(() => {
+        // Clear local storage and redirect to register
+        localStorage.removeItem("loggedInUserId");
+        window.location.href = "register.html";
+      })
+      .catch((error) => {
+        console.error("Sign out error: ", error);
+      });
+  }
+});
 
-  signOut(auth)
-    .then(() => {
-      console.log("User signed out successfully!"); // Debugging
+const imageUpload = document.getElementById("imageUpload");
+const placeholderImg = document.getElementById("placeholderImg");
 
-      // Clear local storage and redirect to register
-      localStorage.removeItem("loggedInUserId");
-      window.location.href = "register.html";
-    })
-    .catch((error) => {
-      console.error("Sign out error: ", error);
-    });
+imageUpload.addEventListener("change", function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            // Replace the placeholder image source with the uploaded image
+            placeholderImg.src = e.target.result; 
+        };
+        reader.readAsDataURL(file); // Read the uploaded file
+    }
 });
