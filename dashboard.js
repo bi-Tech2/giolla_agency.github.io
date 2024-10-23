@@ -100,15 +100,39 @@ document.getElementById("signOutBtn").addEventListener("click", (event) => {
 });
 
 const imageUpload = document.getElementById("imageUpload");
-const placeholderImg = document.getElementById("placeholderImg");
+const placeholderIcon = document.getElementById("placeholderIcon");
 
+// Function to display the uploaded or stored image
+function displayImage(imageSrc) {
+    let uploadedImg = document.createElement("img");
+    uploadedImg.src = imageSrc;
+    uploadedImg.style.width = "100%";
+    uploadedImg.style.height = "100%";
+    uploadedImg.style.objectFit = "cover";
+    placeholderIcon.replaceWith(uploadedImg); // Replace Ionicon with the image
+}
+
+// Check if there's an image stored in localStorage when the page loads
+window.addEventListener("load", function() {
+    const storedImage = localStorage.getItem("uploadedImage");
+    if (storedImage) {
+        displayImage(storedImage); // Display the stored image
+    }
+});
+
+// Handle image upload
 imageUpload.addEventListener("change", function(event) {
     const file = event.target.files[0];
     if (file) {
         const reader = new FileReader();
         reader.onload = function(e) {
-            // Replace the placeholder image source with the uploaded image
-            placeholderImg.src = e.target.result; 
+            const imageSrc = e.target.result;
+
+            // Store the uploaded image in localStorage
+            localStorage.setItem("uploadedImage", imageSrc);
+
+            // Display the uploaded image
+            displayImage(imageSrc);
         };
         reader.readAsDataURL(file); // Read the uploaded file
     }

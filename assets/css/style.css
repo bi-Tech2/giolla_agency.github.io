@@ -1708,11 +1708,11 @@ input[type="search"]:focus {
   padding: 0px 40px;
 }
 
-/* Image upload styles */
+/* Image upload container styles */
 .imgj {
   position: relative;
-  width: 300px; /* Set equal width and height for a perfect circle */
-  height: 220px;
+  width: 400px;
+  height: 300px; /* Set equal width and height for a perfect circle */
   overflow: hidden;
   border: 2px dashed #ccc;
   border-radius: 50%; /* Make it round */
@@ -1720,45 +1720,32 @@ input[type="search"]:focus {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  background-color: #f9f9f9;
-}
-/* Specific image styles within .imgj */
-.imgj img {
-  width: 600px; /* Set a fixed width */
-  height: 300px; /* Set a fixed height */
-  object-fit: cover; /* Ensure the image covers the area while maintaining aspect ratio */
-  border-radius: 10px; /* Rounded corners for consistency */
+  background-color: #0056b3;
+  z-index: 1;
 }
 
-.image-upload {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+/* Style for the Ionicon inside .imgj */
+.imgj ion-icon {
+  font-size: 120px; /* Set size for the Ionicon */
+  color: #ffffff; /* Set color for the Ionicon */
 }
 
-.image-upload img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures the image fits the circular container */
-  border-radius: 50%; /* Ensure the uploaded image is also round */
-}
-
+/* Hide the actual file input */
 input[type="file"] {
-  display: none; /* Hide the actual file input */
+  display: none;
 }
-
 
 /* Responsive Styles */
 @media (max-width: 768px) {
   .welcome {
     padding: 23px 10px; /* Reduce padding on smaller screens */
   }
-.detail{
-  flex-direction: column;
-  align-items: start;
-}
+
+  .detail {
+    flex-direction: column;
+    align-items: start;
+  }
+
   .d1 {
     font-size: 1.5rem; /* Adjust font size for smaller screens */
     text-align: left;
@@ -1773,7 +1760,8 @@ input[type="file"] {
     min-width: 200px;
     padding: 7px;
   }
-  .greet{
+
+  .greet {
     flex-direction: column;
   }
 
@@ -1794,8 +1782,67 @@ input[type="file"] {
   .lab {
     font-size: 10px; /* Smaller font size for labels */
   }
-  .ion-info{
+
+  .ion-info {
     font-size: 1.45rem;
     font-weight: normal;
+  }
+  .imgj{
+    width: 2600px;
+    height: 600px;
+  }
+  /* For smaller screens, adjust the size of the icon */
+  .imgj ion-icon {
+    font-size: 150px; /* Smaller size for the Ionicon on mobile */
+  }
+}
+/* Image upload container styles */
+.imgj {
+  position: relative;
+  width: 400px;
+  height: 300px;
+  overflow: hidden;
+  border: 2px dashed #ccc;
+  border-radius: 50%; /* Make it round */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #0056b3;
+  z-index: 1;
+}
+
+/* Style for the Ionicon inside .imgj */
+.imgj ion-icon {
+  font-size: 120px; /* Set size for the Ionicon */
+  color: #ffffff; /* Set color for the Ionicon */
+}
+
+/* Hide the actual file input */
+input[type="file"] {
+  display: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .imgj {
+    width: 200px;
+    height: 200px; /* Adjust size on smaller screens */
+    border-radius: 50%; /* Maintain circular shape */
+  }
+
+  .imgj ion-icon {
+    font-size: 100px; /* Smaller Ionicon size */
+  }
+}
+
+@media (max-width: 480px) {
+  .imgj {
+    width: 150px;
+    height: 150px; /* Further adjust for smaller mobile screens */
+  }
+
+  .imgj ion-icon {
+    font-size: 80px; /* Further reduce Ionicon size */
   }
 }
