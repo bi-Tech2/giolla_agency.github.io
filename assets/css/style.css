@@ -1606,14 +1606,6 @@ body {
 }
 
 
-/* General styles */
-body {
-  font-family: 'Arial', sans-serif; /* Set a default font */
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
-  background-color: #f4f4f4; /* Light background color for the whole page */
-}
-
 .welcome {
   width: 100%;
   background-color: #ffffff; /* Main background color */
@@ -1684,12 +1676,12 @@ input[type="search"]:focus {
 /* Additional text styles */
 .lab {
   color: #302b63;
-  font-size: 14px; /* Slightly larger font size */
+  font-size: 17px; /* Slightly larger font size */
 }
 
 .ion-info {
   color: #0f0c29;
-  font-size: 1.9rem; /* Increased font size */
+  font-size: 2.2rem; /* Increased font size */
   font-weight: 700;
 }
 
@@ -1723,7 +1715,15 @@ input[type="search"]:focus {
   background-color: #0056b3;
   z-index: 1;
 }
-
+.iron{
+  position: absolute; /* Positioning the element absolutely */
+  top: 10px; /* Adjust as needed for vertical spacing */
+  right: 10px; /* Adjust as needed for horizontal spacing */
+  background-color: #f0f0f0; 
+  color: #0056b3;
+  padding: 3px; /* Optional: padding for aesthetics */
+  border-radius: 10px; /* Optional: rounded corners */
+}
 /* Style for the Ionicon inside .imgj */
 .imgj ion-icon {
   font-size: 120px; /* Set size for the Ionicon */
@@ -1767,9 +1767,13 @@ input[type="file"] {
 
   .info {
     text-align: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     padding: 0;
     margin-top: 20px;
+    flex-wrap: wrap;
+    text-align: left;
+    align-items: start;
+    gap: 1.5rem;
   }
 }
 
@@ -1834,9 +1838,13 @@ input[type="file"] {
   .imgj ion-icon {
     font-size: 100px; /* Smaller Ionicon size */
   }
+  
 }
 
 @media (max-width: 480px) {
+  .welcome{
+    padding: initial 10px;
+  }
   .imgj {
     width: 150px;
     height: 150px; /* Further adjust for smaller mobile screens */
@@ -1845,4 +1853,5 @@ input[type="file"] {
   .imgj ion-icon {
     font-size: 80px; /* Further reduce Ionicon size */
   }
+  
 }

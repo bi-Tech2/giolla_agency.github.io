@@ -3,11 +3,13 @@ import {
   getAuth,
   onAuthStateChanged,
   signOut,
+  createUserWithEmailAndPassword,
 } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
 import {
   getFirestore,
   getDoc,
   doc,
+  setDoc,
 } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -29,48 +31,95 @@ const displayUserData = (userData) => {
   const firstInitial = userData.firstname.charAt(0).toUpperCase();
   const lastInitial = userData.lastname.charAt(0).toUpperCase();
   const initials = `${firstInitial}${lastInitial}`;
-  
+
   // Display user's initials
   document.getElementById("loggedUserFirstname").innerText = initials;
 
   // Display "Hello [firstname]" in the greeting
   document.getElementById("userGreeting").innerText = `Hello, ${userData.firstname}`;
-  
+
   // Add the last name and email to the HTML
   document.getElementById("userFirstNameId").innerText = userData.firstname; // First Name
   document.getElementById("userLastNameId").innerText = userData.lastname; // Last Name
   document.getElementById("userEmailId").innerText = userData.email; // Email
+
+  // Display user's uploaded image or placeholder
+  const uploadedImgSrc = userData.uploadedImage || 'path/to/initial/icon.png'; // Provide path to the initial icon
+  displayImage(uploadedImgSrc);
 };
+
+// Function to handle user registration
+function registerUser(email, password, firstname, lastname) {
+  // Register new user
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+
+      // Store new user details in Firestore
+      const userData = {
+        firstname: firstname,
+        lastname: lastname,
+        email: email,
+        uploadedImage: null, // Initially no image
+      };
+      setDoc(doc(db, "users", user.uid), userData)
+        .then(() => {
+          localStorage.setItem("loggedInUserId", user.uid); // Store user ID
+          localStorage.setItem("userData", JSON.stringify(userData));
+          displayUserData(userData);
+        })
+        .catch((error) => {
+          console.error("Error storing user data: ", error);
+        });
+    })
+    .catch((error) => {
+      console.error("Registration error: ", error);
+    });
+}
+
+// Function to clear user data from local storage
+function clearUserData() {
+  localStorage.removeItem("loggedInUserId");
+  localStorage.removeItem("userData");
+}
 
 // Check if the user is authenticated
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    const loggedInUserId = localStorage.getItem("loggedInUserId");
+    const loggedInUserId = user.uid; // Get the user ID directly from user object
 
-    if (loggedInUserId) {
-      const docRef = doc(db, "users", loggedInUserId);
-      getDoc(docRef)
-        .then((docSnap) => {
-          if (docSnap.exists()) {
-            const userData = docSnap.data();
-            displayUserData(userData);
-          }
-        })
-        .catch((error) => {
-          console.error("Error fetching user data: ", error);
-        });
+    // First, check local storage for user data to display immediately
+    const storedUserData = JSON.parse(localStorage.getItem("userData"));
+    if (storedUserData) {
+      displayUserData(storedUserData); // Display cached user data
     }
+
+    // Fetch fresh data from Firestore
+    const docRef = doc(db, "users", loggedInUserId);
+    getDoc(docRef)
+      .then((docSnap) => {
+        if (docSnap.exists()) {
+          const userData = docSnap.data();
+          // Update local storage and UI with fresh data
+          localStorage.setItem("userData", JSON.stringify(userData));
+          displayUserData(userData); // Display fresh data
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching user data: ", error);
+      });
   } else {
     // If no user is signed in, check local storage for user data
     const storedUserData = JSON.parse(localStorage.getItem("userData"));
     if (storedUserData) {
-      displayUserData(storedUserData); // Display user data if available
+      displayUserData(storedUserData); // Display cached user data if available
     } else {
       // Redirect to the register page if no data is found
       window.location.href = "register.html";
     }
   }
 });
+
 
 // Add click event listener to the ion-icon to toggle Sign Out button
 document.getElementById("userIcon").addEventListener("click", () => {
@@ -89,8 +138,8 @@ document.getElementById("signOutBtn").addEventListener("click", (event) => {
   if (confirmSignOut) {
     signOut(auth)
       .then(() => {
-        // Clear local storage and redirect to register
-        localStorage.removeItem("loggedInUserId");
+        // Clear local storage (except user data)
+        clearUserData();
         window.location.href = "register.html";
       })
       .catch((error) => {
@@ -104,36 +153,42 @@ const placeholderIcon = document.getElementById("placeholderIcon");
 
 // Function to display the uploaded or stored image
 function displayImage(imageSrc) {
-    let uploadedImg = document.createElement("img");
-    uploadedImg.src = imageSrc;
-    uploadedImg.style.width = "100%";
-    uploadedImg.style.height = "100%";
-    uploadedImg.style.objectFit = "cover";
-    placeholderIcon.replaceWith(uploadedImg); // Replace Ionicon with the image
+  let uploadedImg = document.createElement("img");
+  uploadedImg.src = imageSrc;
+  uploadedImg.style.width = "100%";
+  uploadedImg.style.height = "100%";
+  uploadedImg.style.objectFit = "cover";
+  placeholderIcon.replaceWith(uploadedImg); // Replace Ionicon with the image
 }
 
 // Check if there's an image stored in localStorage when the page loads
 window.addEventListener("load", function() {
-    const storedImage = localStorage.getItem("uploadedImage");
-    if (storedImage) {
-        displayImage(storedImage); // Display the stored image
-    }
+  const storedImage = localStorage.getItem("uploadedImage");
+  if (storedImage) {
+    displayImage(storedImage); // Display the stored image
+  }
 });
 
 // Handle image upload
 imageUpload.addEventListener("change", function(event) {
-    const file = event.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const imageSrc = e.target.result;
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      const imageSrc = e.target.result;
 
-            // Store the uploaded image in localStorage
-            localStorage.setItem("uploadedImage", imageSrc);
-
-            // Display the uploaded image
-            displayImage(imageSrc);
-        };
-        reader.readAsDataURL(file); // Read the uploaded file
-    }
+      // Store the uploaded image in Firestore and localStorage
+      const loggedInUserId = localStorage.getItem("loggedInUserId");
+      const userRef = doc(db, "users", loggedInUserId);
+      setDoc(userRef, { uploadedImage: imageSrc }, { merge: true })
+        .then(() => {
+          localStorage.setItem("uploadedImage", imageSrc);
+          displayImage(imageSrc);
+        })
+        .catch((error) => {
+          console.error("Error uploading image: ", error);
+        });
+    };
+    reader.readAsDataURL(file); // Read the uploaded file
+  }
 });
