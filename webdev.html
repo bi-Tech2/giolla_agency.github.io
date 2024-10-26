@@ -109,6 +109,179 @@
     - #FEATURES
   -->
                 <br><br><br>
+<!-- Hero Section -->
+<section id="hero">
+    <div class="hero-content">
+      <h1>Web Development Services</h1>
+      <p>
+        Crafting high-quality, responsive websites that bring your vision to life. Specializing in front-end, back-end, and full-stack development to meet all your web needs.
+      </p>
+      <p>
+        Ready to elevate your online presence? Let’s make it happen with creativity, precision, and modern tech solutions.
+      </p>
+      <a href="contact.html" class="hero-btn">Contact Me</a>
+    </div>
+  </section>
+<style>
+    /* Hero Section Styling */
+#hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  background-image: linear-gradient(to bottom, hsl(210, 63%, 42%), hsl(214, 74%, 23%), rgb(13, 13, 77));
+  object-fit: contain;
+  color: #ffffff;
+  text-align: center;
+  padding: 40px 20px;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 95%;
+  animation: fadeInUp 1.5s ease-out forwards;
+  opacity: 0;
+}
+
+#hero h1 {
+  font-size: 2.8em;
+  margin-bottom: 40px;
+  line-height: 1.2;
+}
+
+#hero p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: hsl(224, 100%, 50%);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: hsl(224, 83%, 44%);
+}
+
+/* Fade-In Up Animation */
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* Responsive Styling */
+
+/* Large screens (up to 1200px) */
+@media (max-width: 1200px) {
+  #hero h1 {
+    font-size: 2.5em;
+  }
+
+  #hero p {
+    font-size: 1.05em;
+  }
+
+  .hero-btn {
+    padding: 14px 30px;
+  }
+}
+/* Medium screens (up to 900px) */
+@media (max-width: 900px) {
+  #hero h1 {
+    font-size: 2.2em;
+  }
+
+  #hero p {
+    font-size: 1em;
+  }
+
+  .hero-btn {
+    padding: 12px 28px;
+  }
+}
+/* Small screens (up to 600px) */
+@media (max-width: 600px) {
+  #hero h1 {
+    font-size: 1.7em;
+  }
+
+  #hero p {
+    font-size: .9em;
+  }
+
+  .hero-btn {
+    padding: 10px 22px;
+    font-size: 0.9em;
+  }
+}
+</style>  
+
+<!-- 
+        - #ABOUT
+      -->
+
+      <section class="section about" id="about" aria-label="about">
+        <div class="container">
+      
+          <figure class="about-banner">
+            <img src="./assets/images/about-banner.png" width="802" height="654" loading="lazy" alt="about banner"
+              class="w-100">
+          </figure>
+      
+          <div class="about-content">
+      
+            <h2 class="h2-sm section-title">Empowering Your Vision with Expert Web Development</h2>
+      
+            <p class="section-text">
+              At GIOLLA, we bring technical expertise and creative insight to build high-quality, user-focused websites. From responsive design to scalable development, we provide complete web solutions to elevate your brand online.
+            </p>
+      
+            <ul class="about-list">
+      
+              <li class="has-before">
+                Responsive and Mobile-Optimized Web Design
+              </li>
+      
+              <li class="has-before">
+                Custom Full-Stack Web Development Solutions
+              </li>
+      
+              <li class="has-before">
+                Performance Optimization and Secure Web Architectures
+              </li>
+      
+            </ul>
+      
+            <div class="btn-group">
+              <a href="service.html" class="btn btn-primary">Explore Our Services</a>
+      
+              <button class="flex-btn">
+                <div class="btn-icon">
+                  <ion-icon name="medal-outline" aria-hidden="true"></ion-icon>
+                </div>
+      
+                <span class="span">2+ Years of Web Development Expertise</span>
+              </button>
+            </div>
+      
+          </div>
+      
+        </div>
+      </section>
+      
+  
 
                 <section class="section cta" aria-label="call to action">
                     <div class="container">
@@ -306,7 +479,7 @@
                 setTimeout(function () {
                     document.getElementById("loadingScreen").style.display = "none";
                     document.getElementById("mainContent").style.display = "block";
-                }, 5000); // 5000ms = 5 seconds
+                }, 50); // 5000ms = 5 seconds
             });
         </script>
         <!-- 

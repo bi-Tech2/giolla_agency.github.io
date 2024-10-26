@@ -1658,7 +1658,7 @@ input[type="search"]:focus {
 }
 
 /* Button styles */
-.btn {
+.btnn {
   padding: 15px 20px; /* Increased padding */
   background-color: #007bff;
   color: white;
@@ -1721,7 +1721,7 @@ input[type="search"]:focus {
   right: 10px; /* Adjust as needed for horizontal spacing */
   background-color: #f0f0f0; 
   color: #0056b3;
-  padding: 3px; /* Optional: padding for aesthetics */
+  padding: 5px; /* Optional: padding for aesthetics */
   border-radius: 10px; /* Optional: rounded corners */
 }
 /* Style for the Ionicon inside .imgj */
@@ -1778,17 +1778,17 @@ input[type="file"] {
 }
 
 @media (max-width: 480px) {
-  .btn {
-    padding: 8px 16px; /* Adjust button size */
+  .btnn {
+    padding: 13px 18px; /* Adjust button size */
     font-size: 0.9rem; /* Smaller font for buttons */
   }
 
   .lab {
-    font-size: 10px; /* Smaller font size for labels */
+    font-size: 14px; /* Smaller font size for labels */
   }
 
   .ion-info {
-    font-size: 1.45rem;
+    font-size: 1.85rem;
     font-weight: normal;
   }
   .imgj{
