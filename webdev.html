@@ -226,6 +226,131 @@
     font-size: 0.9em;
   }
 }
+
+/* Services Offered Section Styling */
+#services {
+    padding: 60px 20px;
+    background-color: #111438;
+}
+
+.luffy-title {
+    text-align: center;
+    font-size: 2.5em;
+    color: #f8f8f8;
+    margin-bottom: 20px;
+}
+
+.goku-description {
+    text-align: center;
+    font-size: 1.2em;
+    color: #e2e2e2;
+    margin-bottom: 40px;
+}
+
+.naruto-service-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.deku-service-item {
+    background: hsl(234, 100%, 91%);
+    position: relative;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.deku-service-item:hover {
+    transform: translateY(-5px);
+}
+
+.todoroki-service-heading {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #020318;
+}
+
+.sakura-service-text {
+    font-size: 1em;
+    color: #191a35;
+    margin-bottom: 15px;
+}
+
+.one-piece-service-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #111438;
+    color: #ffffff;
+    text-decoration: none;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .luffy-title {
+        font-size: 2em; /* Adjust title font size for smaller screens */
+    }
+
+    .goku-description {
+        font-size: 1.1em; /* Adjust description font size */
+    }
+
+    .naruto-service-list {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Smaller card size */
+    }
+
+    .deku-service-item {
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
+
+    .todoroki-service-heading {
+        font-size: 1.3em; /* Adjust heading size */
+    }
+
+    .sakura-service-text {
+        font-size: 0.9em; /* Adjust text size */
+    }
+
+    .one-piece-service-link {
+        padding: 8px 15px; /* Adjust link padding */
+        right: 15px; /* Adjust position */
+    }
+}
+
+@media (max-width: 480px) {
+    .luffy-title {
+        font-size: 1.8em; /* Further reduce title size for very small screens */
+    }
+
+    .goku-description {
+        font-size: 1em; /* Further reduce description size */
+    }
+
+    .deku-service-item {
+        padding: 10px; /* Further reduce padding */
+    }
+
+    .todoroki-service-heading {
+        font-size: 1.2em; /* Further reduce heading size */
+    }
+
+    .sakura-service-text {
+        font-size: 0.85em; /* Further reduce text size */
+    }
+
+    .one-piece-service-link {
+        padding: 6px 12px; /* Further reduce link padding */
+        right: 10px; /* Adjust position */
+    }
+}
+
 </style>  
 
 <!-- 
@@ -265,15 +390,7 @@
             </ul>
       
             <div class="btn-group">
-              <a href="service.html" class="btn btn-primary">Explore Our Services</a>
-      
-              <button class="flex-btn">
-                <div class="btn-icon">
-                  <ion-icon name="medal-outline" aria-hidden="true"></ion-icon>
-                </div>
-      
-                <span class="span">2+ Years of Web Development Expertise</span>
-              </button>
+              <a href="service.html" class="btn btn-primary">Explore All Services</a>
             </div>
       
           </div>
@@ -281,6 +398,72 @@
         </div>
       </section>
       
+  <!-- Services Offered Section -->
+<section id="services" aria-label="services">
+    <div class="container">
+        <h2 class="luffy-title">Our Web Development Services</h2>
+        <p class="goku-description">Explore our range of web development services designed to enhance your online presence.</p>
+        
+        <div class="naruto-service-list">
+          
+            <!-- Service Card 1: Front-End Development -->
+            <div class="deku-service-item">
+                <h3 class="todoroki-service-heading">Front-End Development</h3>
+                <p class="sakura-service-text">
+                   We create visually stunning and responsive interfaces for seamless user experiences across devices.
+                </p>
+                <a class="one-piece-service-link">1</a>
+            </div>
+
+            <!-- Service Card 2: Back-End Development -->
+            <div class="deku-service-item">
+                <h3 class="todoroki-service-heading">Back-End Development</h3>
+                <p class="sakura-service-text">
+                    We build robust, secure, and scalable server-side applications to power your website effectively.
+                </p>
+                <a class="one-piece-service-link">2</a>
+            </div>
+
+            <!-- Service Card 3: Full-Stack Development -->
+            <div class="deku-service-item">
+                <h3 class="todoroki-service-heading">Full-Stack Development</h3>
+                <p class="sakura-service-text">
+                    We combine front-end and back-end expertise for a complete web solution that’s optimized and efficient.
+                </p>
+                <a class="one-piece-service-link">3</a>
+            </div>
+
+            <!-- Service Card 4: E-commerce Solutions -->
+            <div class="deku-service-item">
+                <h3 class="todoroki-service-heading">E-commerce Solutions</h3>
+                <p class="sakura-service-text">
+                    We develop custom e-commerce platforms to enhance sales and streamline online shopping experiences.
+                </p>
+                <a class="one-piece-service-link">4</a>
+            </div>
+
+            <!-- Service Card 5: Website Optimization -->
+            <div class="deku-service-item">
+                <h3 class="todoroki-service-heading">Website Optimization</h3>
+                <p class="sakura-service-text">
+                    We improve loading speeds, SEO, and user engagement with thorough performance optimizations.
+                </p>
+                <a class="one-piece-service-link">5</a>
+            </div>
+
+            <!-- Service Card 6: Maintenance and Support -->
+            <div class="deku-service-item">
+                <h3 class="todoroki-service-heading">Maintenance & Support</h3>
+                <p class="sakura-service-text">
+                    We provide ongoing support to ensure your website remains up-to-date, secure, and fully functional.
+                </p>
+                <a class="one-piece-service-link">6</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
   
 
                 <section class="section cta" aria-label="call to action">
