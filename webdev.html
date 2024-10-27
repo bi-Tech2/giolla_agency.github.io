@@ -334,7 +334,7 @@
     }
 
     .deku-service-item {
-        padding: 0px; /* Further reduce padding */
+        padding: 10px; /* Further reduce padding */
     }
 
     .todoroki-service-heading {
@@ -350,63 +350,86 @@
         right: 10px; /* Adjust position */
     }
 }
-/* Portfolio Section Styles */
-.slider{
-    width: 100%;
-    height: 30dvh;
+/* General slider styling */
+.slider {
     overflow: hidden;
-    mask-image: linear-gradient(
-        to right,
-        transparent,
-        #000 10% 90%,
-        transparent
-    );
-    display: grid;
-    place-items: center;
+    width: 100%;
+    margin: auto;
+    max-width: 1200px; /* Adjust as needed */
 }
-.slider .list{
+
+.list {
+    display: flex;
+    gap: 1.5rem;
+    animation: autoScroll 15s linear infinite;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.item {
+    height: 300px;
+    width: 350px;
+    flex: 0 0 auto;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px; /* Optional, to round the image corners */
+}
+
+/* Keyframe animation for auto-scroll */
+@keyframes autoScroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .item {
+        min-width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .item {
+        min-width: 200px;
+    }
+}
+.head{
     display: flex;
     width: 100%;
-    min-width: calc(var(--width) * var(--quantity));
-    position: relative;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 20px;
 }
-.slider .list .item{
-    width: var(--width);
-    height: var(--height);
-    position: absolute;
-    left: 100%;
-    animation: autoRun 10s linear infinite;
-    transition: filter 0.5s;
-    animation-delay: calc( (10s / var(--quantity)) * (var(--position) - 1) - 10s)!important;
+.head h1{
+    font-size: 3rem;
+    color: #191a35;
 }
-.slider .list .item img{
-    width: 100%;
+.head p{
+    font-size: 1.9rem;
+    color: #2d2e50;
 }
-@keyframes autoRun{
-    from{
-        left: 100%;
-    }to{
-        left: calc(var(--width) * -1);
-    }
-}
-.slider:hover .item{
-    animation-play-state: paused!important;
-    filter: grayscale(1);
-}
-.slider .item:hover{
-    filter: grayscale(0);
-}
-.slider[reverse="true"] .item{
-    animation: reversePlay 10s linear infinite;
-}
-@keyframes reversePlay{
-    from{
-        left: calc(var(--width) * -1);
-    }to{
-        left: 100%;
-    }
-}
+
 </style>  
+<script>
+    const list = document.querySelector('.list');
+
+list.addEventListener('mouseover', () => {
+    list.style.animationPlayState = 'paused';
+});
+
+list.addEventListener('mouseleave', () => {
+    list.style.animationPlayState = 'running';
+});
+
+</script>
 
 <!-- 
         - #ABOUT
@@ -452,7 +475,35 @@
       
         </div>
       </section>
-      
+      <!-- Portfolio Section -->
+      <div class="slider">
+        <div class="head">
+            <h1>
+                Showcase of our Work
+            </h1>
+            <p>
+                Explore a collection of projects crafted with passion and precision, showcasing my commitment to quality and creativity.
+            </p>
+        </div>
+        <div class="list">
+            <div class="item"><img src="p1.jpg" alt=""></div>
+            <div class="item"><img src="p2.jpg" alt=""></div>
+            <div class="item"><img src="p3.jpg" alt=""></div>
+            <div class="item"><img src="p4.jpg" alt=""></div>
+            <div class="item"><img src="p5.jpg" alt=""></div>
+            <div class="item"><img src="p1.jpg" alt=""></div>
+            <div class="item"><img src="p2.jpg" alt=""></div>
+            <div class="item"><img src="p3.jpg" alt=""></div>
+            <div class="item"><img src="p4.jpg" alt=""></div>
+            <div class="item"><img src="p5.jpg" alt=""></div>
+            <div class="item"><img src="p1.jpg" alt=""></div>
+            <div class="item"><img src="p2.jpg" alt=""></div>
+            <div class="item"><img src="p3.jpg" alt=""></div>
+            <div class="item"><img src="p4.jpg" alt=""></div>
+            <div class="item"><img src="p5.jpg" alt=""></div>
+            <!-- Add more items as needed -->
+        </div>
+    </div>
   <!-- Services Offered Section -->
 <section id="services" aria-label="services">
     <div class="container">
@@ -531,45 +582,7 @@
                         </div>
                     </div>
                 </section>
-
-<!-- Portfolio Section -->
-<div class="slider" style="
-            width: 300px;
-            height: 50px;
-            quantity: 10;
-        ">
-            <div class="list">
-                <div class="item" style="--position: 1"><img src="p1.jpg" alt=""></div>
-                <div class="item" style="--position: 2"><img src="p1.jpg" alt=""></div>
-                <div class="item" style="--position: 3"><img src="p1.jpg" alt=""></div>
-                <div class="item" style="--position: 4"><img src="p1.jpg" alt=""></div>
-                <div class="item" style="--position: 5"><img src="p1.jpg" alt=""></div>
-                <div class="item" style="--position: 6"><img src="p1.jpg" alt=""></div>
-                <div class="item" style="--position: 7"><img src="p1.jpg" alt=""></div>
-                <div class="item" style="--position: 8"><img src="p1.jpg" alt=""></div>
-                <div class="item" style="--position: 9"><img src="p1.jpg" alt=""></div>
-                <div class="item" style="--position: 10"><img src="p1.jpg" alt=""></div>
-            </div>
-        </div>
-
-        <div class="slider" reverse="true" style="
-            width: 200px;
-            height: 200px;
-            quantity: 9;
-        ">
-            <div class="list">
-                <div class="item" style="--position: 1"><img src="images/slider2_1.png" alt=""></div>
-                <div class="item" style="--position: 2"><img src="images/slider2_2.png" alt=""></div>
-                <div class="item" style="--position: 3"><img src="images/slider2_3.png" alt=""></div>
-                <div class="item" style="--position: 4"><img src="images/slider2_4.png" alt=""></div>
-                <div class="item" style="--position: 5"><img src="images/slider2_5.png" alt=""></div>
-                <div class="item" style="--position: 6"><img src="images/slider2_6.png" alt=""></div>
-                <div class="item" style="--position: 7"><img src="images/slider2_7.png" alt=""></div>
-                <div class="item" style="--position: 8"><img src="images/slider2_8.png" alt=""></div>
-                <div class="item" style="--position: 9"><img src="images/slider2_9.png" alt=""></div>
-            </div>
-        </div>
-
+                
 
             </article>
         </main>
